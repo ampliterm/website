@@ -7,11 +7,10 @@ defineProps({
 })
 
 const links = [
-  { label: 'Features',  href: '/#features',  page: 'features' },
-  { label: 'Pricing',   href: '/#pricing',   page: 'pricing' },
-  { label: 'Self-Host', href: '/#self-host', page: 'self-host' },
+  { label: 'Roadmap',   href: '/roadmap',    page: 'roadmap' },
+  { label: 'Changelog', href: '/changelog',  page: 'changelog' },
   { label: 'Docs',      href: '/docs',       page: 'docs' },
-  { label: 'Research',  href: '/blog',       page: 'blog' },
+  { label: 'Blog',  href: '/blog',       page: 'blog' },
 ]
 </script>
 
