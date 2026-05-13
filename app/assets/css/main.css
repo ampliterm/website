@@ -1,0 +1,86 @@
+/* ── FONTS ── */
+/* @nuxt/fonts picks up the font-family declaration below and handles download/optimization */
+
+/* ── DESIGN TOKENS ── */
+:root {
+  /* Backgrounds */
+  --bg-0: #0a0a0a;
+  --bg-1: #111111;
+  --bg-2: #181818;
+  --bg-3: #222222;
+  --bg-4: #2a2a2a;
+
+  /* Borders */
+  --border-0: #1e1e1e;
+  --border-1: #2a2a2a;
+  --border-2: #3a3a3a;
+
+  /* Text */
+  --text-0: #f0f0ee;
+  --text-1: #a0a09e;
+  --text-2: #606060;
+  --text-3: #3a3a3a;
+
+  /* Semantic */
+  --green:      #00e676;
+  --green-dim:  #00e67622;
+  --red:        #ff4444;
+  --red-dim:    #ff444422;
+
+  /* Accents */
+  --cyan:       #00b8d4;
+  --cyan-dim:   #00b8d422;
+  --amber:      #f5a623;
+  --amber-dim:  #f5a62322;
+
+  /* Typography */
+  --font: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* Radius — sharp corners everywhere */
+  --r: 0px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--text-0);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: var(--bg-4); }
