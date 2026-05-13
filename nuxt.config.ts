@@ -12,6 +12,11 @@ export default defineNuxtConfig({
       },
     ],
   },
+  content: {
+    highlight: {
+      theme: 'github-dark',
+    },
+  },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
 })

@@ -1,20 +1,22 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   activePage: { type: String, default: '' },
   ctaLabel: { type: String, default: 'Get Ampliterm — $999' },
   ctaHref: { type: String, default: '/#pricing' },
+  variant: { type: String as () => 'default' | 'docs', default: 'default' },
 })
 
 const links = [
-  { label: 'Features', href: '/#features', page: 'features' },
-  { label: 'Pricing', href: '/#pricing', page: 'pricing' },
+  { label: 'Features',  href: '/#features',  page: 'features' },
+  { label: 'Pricing',   href: '/#pricing',   page: 'pricing' },
   { label: 'Self-Host', href: '/#self-host', page: 'self-host' },
-  { label: 'Research', href: '/blog', page: 'blog' },
+  { label: 'Docs',      href: '/docs',       page: 'docs' },
+  { label: 'Research',  href: '/blog',       page: 'blog' },
 ]
 </script>
 
 <template>
-  <nav class="nav">
+  <nav class="nav" :class="{ 'nav--docs': variant === 'docs' }">
     <NuxtLink class="nav-logo" to="/">
       <AppLogomark :size="20" />
       <div class="nav-logo-wordmark">
@@ -33,7 +35,11 @@ const links = [
       >{{ link.label }}</NuxtLink>
     </div>
 
-    <a class="nav-cta" :href="ctaHref">{{ ctaLabel }}</a>
+    <div class="nav-right">
+      <slot name="right">
+        <a class="nav-cta" :href="ctaHref">{{ ctaLabel }}</a>
+      </slot>
+    </div>
   </nav>
 </template>
 
@@ -108,8 +114,20 @@ const links = [
   border-bottom-color: var(--green);
 }
 
-.nav-cta {
+.nav--docs .nav-link.active {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
+}
+
+.nav-right {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-cta {
   display: inline-flex;
   align-items: center;
   padding: 7px 16px;

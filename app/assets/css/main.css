@@ -28,10 +28,12 @@
   --red-dim:    #ff444422;
 
   /* Accents */
-  --cyan:       #00b8d4;
-  --cyan-dim:   #00b8d422;
-  --amber:      #f5a623;
-  --amber-dim:  #f5a62322;
+  --cyan:        #00b8d4;
+  --cyan-dim:    #00b8d422;
+  --amber:       #f5a623;
+  --amber-dim:   #f5a62322;
+  --magenta:     #e040fb;
+  --magenta-dim: #e040fb22;
 
   /* Typography */
   --font: 'JetBrains Mono', monospace;
