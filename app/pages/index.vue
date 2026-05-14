@@ -1,6 +1,8 @@
 <script setup lang="ts">
 useScrollReveal('.reveal')
 
+const waitlistOpen = ref(false)
+
 /* ─────────────────────────────────────────────────────────────
    MARKETING CONTENT
    Edit copy here — no need to touch the template below.
@@ -13,8 +15,8 @@ const hero = {
   headlineEnd: 'not',
   headlineAccent: 'instinct.',
   subtext:
-    'Ampliterm is the research terminal built for <strong>serious day and swing traders</strong>. Journal your setups, run simulations against your thesis, and aggregate alpha — all on your own server.',
-  ctaPrimary:   { label: 'Get Ampliterm — $999', href: '#pricing' },
+    'Ampliterm is the research terminal built for <strong>serious day and swing traders</strong>. Journal your setups, run simulations against your thesis, aggregate alpha, design trading strategies, execute trades, and more — all on your own server.',
+  ctaPrimary:   { label: 'Join the waitlist', href: '#pricing' },
   ctaSecondary: { label: 'See features →',       href: '#features' },
   notes: ['One-time payment.', 'Self-hosted, forever.', 'Your data stays yours.'],
 }
@@ -46,8 +48,8 @@ const features = {
     },
     {
       name: 'Simulations',
-      desc: 'Run Monte Carlo simulations and backtests against any symbol. Model bull, base, and bear scenarios with adjustable parameters. See probability distributions, max drawdown estimates, and expected return ranges before entering a position.',
-      tag: 'Monte Carlo · Backtesting · Scenario modeling',
+      desc: 'Run simulations and backtests against any symbol. Model bull, base, and bear scenarios with adjustable parameters. See probability distributions, success rates, and return distributions before entering a position.',
+      tag: 'Backtesting · Scenario modeling',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <polyline points="1,13 5,7 8,9 11,4 15,6" fill="none" stroke="#00b8d4" stroke-width="1.5"/>
@@ -57,8 +59,8 @@ const features = {
     },
     {
       name: 'Integrated Charts',
-      desc: 'TradingView-powered candlestick charts with full technical overlay support. Toggle SMA 20/50/200, Bollinger Bands, VWAP, and sub-panel indicators including RSI, MACD, and volume — all synced to your journal entries.',
-      tag: 'TradingView · SMA · RSI · MACD · BB',
+      desc: 'TradingView-powered candlestick charts with full technical overlay support. Toggle SMA 20/50/200, Bollinger Bands, VWAP, and so many more! Sub-panel indicators including RSI, MACD, and volume.',
+      tag: 'TradingView · Technical overlays',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="1" y="6" width="14" height="1" fill="#f5a623" opacity=".3"/>
@@ -70,8 +72,8 @@ const features = {
     },
     {
       name: 'Alpha Sources',
-      desc: 'Aggregate signals from analyst upgrades, unusual options flow, SEC filings, earnings calendars, and news — all surfaced per symbol in a unified feed.',
-      tag: 'Analyst · Options flow · SEC · Earnings',
+      desc: 'Aggregate signals and news from any source into a unified feed per symbol.',
+      tag: 'Alpha sources · News aggregation',
       soon: true,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="1" y="3" width="14" height="2.5" fill="none" stroke="#00b8d4" stroke-width="1"/>
@@ -82,7 +84,7 @@ const features = {
     {
       name: 'Watchlist Screener',
       desc: 'Track your universe of stocks in a dense, Bloomberg-style table. Filter by signal, sort by momentum, and jump directly to any stock\'s chart or journal with a single keystroke.',
-      tag: 'Screener · Signal columns · Keyboard-first',
+      tag: 'Screener · Signal columns',
       soon: true,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <polygon points="8,1 15,14 1,14" fill="none" stroke="#00e676" stroke-width="1.2"/>
@@ -107,31 +109,31 @@ const pricing = {
   eyebrow: 'Pricing',
   headline: 'One price.\nOwn it forever.',
   subtext:
-    'No monthly fees. No per-seat pricing. No data access charges. Pay once, self-host, and use Ampliterm as long as you trade.',
+    'No monthly fees. No per-seat pricing. No data access charges. Pay once, self-host, and use Ampliterm as long as you trade. Your data stays yours.',
   tier: 'Professional License',
   price: 999,
   cadence: 'One-time payment · Self-hosted',
   items: [
-    'Research journal with TipTap editor + $TICKER tagging',
+    'Research journal with full-featured editor + $TICKER tagging',
     'Integrated TradingView charts with technical overlays',
-    'Monte Carlo simulation engine',
-    'Alpha source aggregation (analyst, options, news)',
-    'Watchlist screener with signal columns',
+    'Simulations and backtests',
+    'Alpha source aggregation',
+    'Watchlist screener',
     'Full source code for self-hosting',
-    'All future feature updates included',
+    'One year of feature updates included',
   ],
   comparison: [
     { label: 'Lifetime license — no renewal',       included: true },
     { label: 'Full source access for self-hosting', included: true },
     { label: 'All current features',                included: true },
-    { label: 'All future updates',                  included: true },
+    { label: 'One year of feature updates included',included: true },
     { label: 'Your data stays on your server',      included: true },
     { label: 'No usage-based pricing',              included: true },
     { label: 'Monthly SaaS subscription',           included: false },
     { label: 'Per-seat fees',                       included: false },
     { label: 'Data brokerage or telemetry',         included: false },
   ],
-  ctaLabel: 'Get Ampliterm',
+  ctaLabel: 'Join the waitlist',
   ctaHref: '#',
   footnote: 'One-time payment · Lifetime license\nSelf-host on any server or local machine',
 }
@@ -141,7 +143,7 @@ const terminalCta = {
   command: '$ ampliterm --start-trading',
   subtext:
     'Join traders who document every setup, simulate every thesis, and keep their edge compounding — on their own terms.',
-  ctaLabel: 'Get Ampliterm — $999',
+  ctaLabel: 'Join the waitlist',
   ctaHref: '#pricing',
 }
 
@@ -172,7 +174,7 @@ useHead({
         <p class="hero-sub" v-html="hero.subtext"></p>
 
         <div class="hero-cta-row">
-          <a class="cta-primary" :href="hero.ctaPrimary.href">{{ hero.ctaPrimary.label }}</a>
+          <button class="cta-primary" @click="waitlistOpen = true">{{ hero.ctaPrimary.label }}</button>
           <a class="cta-secondary" :href="hero.ctaSecondary.href">{{ hero.ctaSecondary.label }}</a>
         </div>
 
@@ -256,7 +258,7 @@ useHead({
             <ul class="price-list">
               <li v-for="item in pricing.items" :key="item" class="price-item">{{ item }}</li>
             </ul>
-            <a class="price-cta" :href="pricing.ctaHref">{{ pricing.ctaLabel }}</a>
+            <button class="price-cta" @click="waitlistOpen = true">{{ pricing.ctaLabel }}</button>
             <div class="price-footnote" style="white-space: pre-line;">{{ pricing.footnote }}</div>
           </div>
         </div>
@@ -269,11 +271,13 @@ useHead({
         <div class="tcta-pre">{{ terminalCta.comment }}</div>
         <div class="tcta-cmd">{{ terminalCta.command }}<span class="cursor" aria-hidden="true"></span></div>
         <p class="tcta-sub">{{ terminalCta.subtext }}</p>
-        <a class="cta-primary" :href="terminalCta.ctaHref">{{ terminalCta.ctaLabel }}</a>
+        <button class="cta-primary" @click="waitlistOpen = true">{{ terminalCta.ctaLabel }}</button>
       </div>
     </div>
 
     <AppFooter />
+
+    <WaitlistModal :open="waitlistOpen" @close="waitlistOpen = false" />
   </div>
 </template>
 
