@@ -1,0 +1,24 @@
+version: "0.9.0"
+title: "Polish"
+type: patch
+date: "2025-11-20"
+codename: hestia
+intro: "A focused polish sprint. Tags land on ticker pages, journal entries can be linked to any simulation, and you can now create a journal entry or capture a screenshot directly from the ticker and simulation pages without leaving your flow."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Tags on tickers</strong> — label any stock in your watchlist for fast grouping and filtering."
+        author: "@danpastori"
+      - badge: new
+        text: "Link journal entries to simulations — attach any entry to a simulation to track your reasoning against the results."
+        author: "@danpastori"
+      - badge: new
+        text: "Quick-add journal entry from ticker page — create an entry pre-linked to the current stock without navigating away."
+        author: "@danpastori"
+      - badge: new
+        text: "Quick-add journal entry from simulation page — same quick-add flow, pre-linked to the open simulation."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Screenshot chart</strong> — capture and save the current chart view directly from the stock page."
+        author: "@danpastori"

@@ -1,0 +1,27 @@
+version: "0.10.0"
+title: "Maintenance"
+type: patch
+date: "2026-01-22"
+codename: cronus
+intro: "Keeping the foundation solid. Laravel 13 and InertiaJS 3.0 are in, the price prediction page got a full redesign, and a new cron job keeps historic ticker data synced automatically — whether you're pulling from Massive.com CSV exports or a free API plan."
+sections:
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Laravel 13 upgrade</strong> — full framework update with dependency tree refreshed throughout."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>InertiaJS 3.0 upgrade</strong> — updated to the latest major version of Inertia with Vue 3 adapter."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Price prediction page redesign</strong> — cleaner layout, better readability for active and expired predictions."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Historic ticker data sync cron job</strong> — automatically keeps price history up to date on a schedule."
+        author: "@danpastori"
+      - badge: new
+        text: "Massive.com CSV file import support for historic data — drop in a CSV and the cron picks it up."
+        author: "@danpastori"
+      - badge: new
+        text: "Free API plan support for historic data — works without a paid data subscription."
+        author: "@danpastori"

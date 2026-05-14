@@ -1,0 +1,21 @@
+version: "0.3.0"
+title: "Charts"
+type: alpha
+date: "2024-10-18"
+codename: helios
+intro: "The app gets eyes. TradingView Lite charts land on every stock page so you can watch price history, add your watchlist, and — the real unlock — see exactly where each journal entry falls on the price timeline. EMA, SMA, and MACD overlays ship alongside."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>TradingView Lite chart integration</strong> on every stock page with full pan and zoom."
+        author: "@danpastori"
+      - badge: new
+        text: "Watchlist — add any symbol to track and revisit it from a central list."
+        author: "@danpastori"
+      - badge: new
+        text: "Journal entry markers overlaid on the price chart — see what you wrote and when relative to price action."
+        author: "@danpastori"
+      - badge: new
+        text: "Technical overlays: Exponential Moving Average (EMA), Simple Moving Average (SMA), and MACD sub-panel."
+        author: "@danpastori"

@@ -1,0 +1,18 @@
+version: "0.4.0"
+title: "Price Targets"
+type: alpha
+date: "2024-12-10"
+codename: cassandra
+intro: "Put your conviction on record. Price predictions let you log a simple thesis — stock, target price, target date — and see it rendered as a marker on the chart. A command palette makes it fast to capture a prediction from anywhere in the app without breaking your flow."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Price predictions</strong> — log a target price and expected date for any stock in your watchlist."
+        author: "@danpastori"
+      - badge: new
+        text: "Prediction markers on the stock chart — visual indicator showing your target price level and date."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Command palette</strong> — open with <kbd>⌘K</kbd> to create a prediction from anywhere in the app."
+        author: "@danpastori"

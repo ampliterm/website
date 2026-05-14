@@ -1,0 +1,18 @@
+version: "0.1.0"
+title: "Foundations"
+type: alpha
+date: "2024-06-15"
+codename: nyx
+intro: "The very first commit. User accounts exist, sessions persist, and you can write words into a box and save them. That's it. That's the whole app. Everything has to start somewhere."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>User authentication</strong> — register, log in, log out, password reset."
+        author: "@danpastori"
+      - badge: new
+        text: "Basic text journal — create, edit, and delete plain-text entries."
+        author: "@danpastori"
+      - badge: new
+        text: "Laravel + InertiaJS + Vue 3 project scaffold with initial routing."
+        author: "@danpastori"

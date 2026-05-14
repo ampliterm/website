@@ -1,0 +1,20 @@
+version: "0.12.0"
+title: "Performance"
+type: patch
+date: "2026-04-12"
+codename: heracles
+intro: "The app got faster without gaining a single new feature. Partial reloads replace full-page refreshes wherever possible, non-critical data now loads after the initial render, and a Z-index bug that caused journal entries clicked from the chart to behave strangely is finally gone."
+sections:
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Partial reloads throughout the app</strong> — only the data that changed is re-fetched, not the whole page."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Deferred data loading</strong> — non-immediate content loads after the page is interactive so first paint is faster."
+        author: "@danpastori"
+  - type: fixed
+    items:
+      - badge: fixed
+        text: "Journal entry panel had an incorrect Z-index when opened by clicking a chart marker — now layers correctly."
+        author: "@danpastori"

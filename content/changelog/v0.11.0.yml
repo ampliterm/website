@@ -1,0 +1,27 @@
+version: "0.11.0"
+title: "Cortex"
+type: minor
+date: "2026-03-10"
+codename: prometheus
+intro: "AI enters the terminal. Cortex is the name of Ampliterm's AI agent layer — still a proof of concept, but the wiring is real. The Laravel AI SDK and MCP server are installed, a super admin field controls AI integration, and price predictions now appear in the ticker sidebar with automatic validation when they resolve."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Cortex AI agent</strong> — proof of concept for an AI layer that reads your journal and simulations."
+        author: "@danpastori"
+      - badge: new
+        text: "Laravel AI SDK installed — foundation for all AI-powered features going forward."
+        author: "@danpastori"
+      - badge: new
+        text: "Laravel MCP server installed — model context protocol support for structured AI interactions."
+        author: "@danpastori"
+      - badge: new
+        text: "Super admin AI integration field — configure your AI provider and API key from the admin panel."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Price predictions in ticker sidebar</strong> — active predictions for a stock visible at a glance on the stock page."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Prediction validation</strong> — the system automatically checks resolved predictions and marks whether they came true."
+        author: "@danpastori"

@@ -1,0 +1,23 @@
+version: "0.2.0"
+title: "The Journal"
+type: alpha
+date: "2024-08-22"
+codename: hermes
+intro: "Journaling becomes a real discipline. The editor got serious attention and the first version of <code>$TICKER</code> extraction shipped — write a ticker anywhere in an entry and the system automatically recognizes it and links it to the corresponding stock."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Stock ticker extraction</strong> — <code>$TICKER</code> symbols detected inline and linked to matching stocks."
+        author: "@danpastori"
+      - badge: new
+        text: "Journal index view with entry list, search, and date filtering."
+        author: "@danpastori"
+      - badge: new
+        text: "Bidirectional linking — each stock page shows all journal entries that mention it."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "Editor upgraded from a plain textarea to a structured input with better UX."
+        author: "@danpastori"

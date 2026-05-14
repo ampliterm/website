@@ -1,0 +1,24 @@
+version: "0.5.0"
+title: "Simulations"
+type: minor
+date: "2025-02-14"
+codename: clotho
+intro: "The biggest release yet. Simulations let you define a technical setup, run it against real historical data without any lookahead bias, and see exactly how those trades would have unfolded. Three pattern types ship at launch: EMA crossovers, engulfing candles, and cup and handle formations."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Non-forward-looking simulation engine</strong> — test a thesis against historical price data with zero lookahead bias."
+        author: "@danpastori"
+      - badge: new
+        text: "EMA crossover strategy — define fast/slow periods and simulate every crossover signal in history."
+        author: "@danpastori"
+      - badge: new
+        text: "Engulfing candle strategy — detect bullish and bearish engulfing patterns and simulate trade entries."
+        author: "@danpastori"
+      - badge: new
+        text: "Cup and handle pattern strategy — identify formations and simulate breakout entries."
+        author: "@danpastori"
+      - badge: new
+        text: "Simulation results panel with P&amp;L breakdown, win rate, average gain/loss, and max drawdown."
+        author: "@danpastori"

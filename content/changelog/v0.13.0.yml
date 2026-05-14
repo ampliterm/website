@@ -1,0 +1,21 @@
+version: "0.13.0"
+title: "Consistency"
+type: patch
+date: "2026-05-08"
+codename: tyche
+intro: "Small features, meaningful habits. Stock splits no longer silently break price predictions — splits are detected, predictions adjusted, and users notified. A super admin audit log tracks every system action, and a daily email prompt keeps journaling consistent on every trading day."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Stock split handling for price predictions</strong> — split-adjusted target prices calculated automatically when a split is detected."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Stock split notifications</strong> — users are notified when a held stock splits so nothing goes unreviewed."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Audit log for super admin</strong> — full log of system events, user actions, and configuration changes."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Trading day journal email prompt</strong> — automated daily email on market days encouraging a journal entry to keep the habit consistent."
+        author: "@danpastori"

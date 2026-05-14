@@ -1,0 +1,18 @@
+version: "0.7.0"
+title: "Self-Host"
+type: minor
+date: "2025-06-20"
+codename: hephaestus
+intro: "Ampliterm is yours to run. A super admin configuration screen lets you set up and manage the system, and an automated install script gets the entire stack running on your own server with a single command. No lock-in, no cloud dependency."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Super admin screen</strong> — configure the system, manage users, and control app-wide settings from a dedicated panel."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Self-host install script</strong> — one command configures and launches Ampliterm on your own server."
+        author: "@danpastori"
+      - badge: new
+        text: "System health overview in super admin — environment checks, database status, and queue state at a glance."
+        author: "@danpastori"

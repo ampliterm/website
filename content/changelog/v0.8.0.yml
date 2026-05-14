@@ -1,0 +1,26 @@
+version: "0.8.0"
+title: "Terminal Overhaul"
+type: minor
+date: "2025-09-05"
+codename: athena
+intro: "The biggest visual shift in the project's history. The entire UI was torn down and rebuilt as a proper data terminal — dark only, sharp corners, monospace everywhere, JetBrains Mono throughout. Journal entries get a full metadata upgrade too: target price, position size, and bias tags are now first-class fields."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "Journal entry <strong>target price</strong> field — log your price target directly on the entry, linked to the chart."
+        author: "@danpastori"
+      - badge: new
+        text: "Journal entry <strong>position size</strong> field — record how much conviction you put behind a thesis."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Bias tags</strong> on journal entries — label each entry as bullish, bearish, or neutral for quick filtering."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Complete UI/UX redesign</strong> — rebuilt from scratch to a terminal/data aesthetic with JetBrains Mono, dark-only, and sharp corners throughout."
+        author: "@danpastori"
+      - badge: improved
+        text: "Navigation, layout, and spacing standardized across all pages to match the new design system."
+        author: "@danpastori"

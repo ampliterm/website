@@ -1,0 +1,21 @@
+version: "0.6.0"
+title: "Forward Predictions"
+type: minor
+date: "2025-04-05"
+codename: pythia
+intro: "Simulations look backward. This release looks forward. You can now attach forward-looking price predictions to any simulation — estimated price action with a confidence score — and see them rendered directly on the chart alongside the simulation's historical trades."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Forward-looking predictions on simulation charts</strong> — annotate where you think price goes next."
+        author: "@danpastori"
+      - badge: new
+        text: "Confidence scoring — attach a 1–10 confidence level to each prediction so you can track your conviction over time."
+        author: "@danpastori"
+      - badge: new
+        text: "Simulation detail panel — unified view of metrics, trade list, and active predictions in one screen."
+        author: "@danpastori"
+      - badge: new
+        text: "Prediction timeline visualization on the chart — future projections rendered alongside historical simulation signals."
+        author: "@danpastori"
