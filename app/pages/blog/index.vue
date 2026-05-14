@@ -103,7 +103,7 @@ useHead({
       </div>
     </div>
 
-    <BlogNewsletter />
+    <!-- <BlogNewsletter /> -->
     <AppFooter />
   </div>
 </template>

@@ -44,7 +44,6 @@ const meta = computed(() => sectionMeta[props.section.type])
         :key="i"
         class="rel-item"
       >
-        <span class="ri-date">{{ item.date }}</span>
         <span class="badge ri-badge" :class="badgeMeta[item.badge].cls">
           {{ badgeMeta[item.badge].label }}
         </span>
@@ -112,7 +111,7 @@ const meta = computed(() => sectionMeta[props.section.type])
 
 .rel-item {
   display: grid;
-  grid-template-columns: 78px 78px 1fr;
+  grid-template-columns: auto 1fr;
   gap: 14px;
   padding: 7px 0;
   border-bottom: 1px solid var(--border-0);
@@ -122,12 +121,6 @@ const meta = computed(() => sectionMeta[props.section.type])
 
 .rel-item:last-child {
   border-bottom: none;
-}
-
-.ri-date {
-  font-size: 10px;
-  color: var(--text-2);
-  letter-spacing: 0.04em;
 }
 
 .ri-badge {
@@ -195,7 +188,6 @@ const meta = computed(() => sectionMeta[props.section.type])
 
 @media (max-width: 900px) {
   .rel-item {
-    grid-template-columns: 64px 70px 1fr;
     gap: 10px;
   }
 }
