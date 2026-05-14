@@ -6,7 +6,7 @@ defineProps({
 const links = [
   { label: 'Roadmap',   href: '/roadmap' },
   { label: 'Changelog', href: '/changelog' },
-  { label: 'Docs',      href: '/docs' },
+  // { label: 'Docs',      href: '/docs' },
   { label: 'Blog',  href: '/blog' },
 ]
 </script>

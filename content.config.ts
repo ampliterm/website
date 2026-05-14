@@ -79,17 +79,17 @@ export default defineContentConfig({
       type: 'page',
       source: '**',
     }),
-    docs: defineCollection({
-      type: 'page',
-      source: 'docs/**',
-      schema: z.object({
-        section: z.string().default(''),
-        sectionOrder: z.number().default(0),
-        order: z.number().default(0),
-        badge: z.string().optional(),
-        updatedAt: z.string().optional(),
-      }),
-    }),
+    // docs: defineCollection({
+    //   type: 'page',
+    //   source: 'docs/**',
+    //   schema: z.object({
+    //     section: z.string().default(''),
+    //     sectionOrder: z.number().default(0),
+    //     order: z.number().default(0),
+    //     badge: z.string().optional(),
+    //     updatedAt: z.string().optional(),
+    //   }),
+    // }),
     changelog: defineCollection({
       type: 'data',
       source: 'changelog/*.yml',
