@@ -1,0 +1,48 @@
+id: research
+order: 4
+label: "Research"
+quarter: "2027+"
+tag: research
+tagLabel: "EXPLORATORY"
+dateRange: "Speculative · subject to learning"
+codename: gaia
+intro: "Bets we're interested in but haven't committed to. Some will graduate to <code>Later</code>. Some will get killed after a prototype. Listed publicly so the conversation can happen in the open."
+features:
+  - id: whole-market-simulations
+    title: "Whole-Market Simulations"
+    category: "Simulation · Research"
+    icon: globe
+    status: research
+    statusLabel: "Exploring"
+    description: >-
+      Run a strategy simulation not against a single stock, but against an entire sector or market index simultaneously. See how a thesis performs across correlated assets, identify which sectors it has historically worked in, and surface cross-stock patterns that per-symbol simulations miss.
+    bullets:
+      - "Sector-wide backtests — run any strategy across every stock in a sector and compare results side by side."
+      - "Cross-asset correlation analysis — surface which stocks behave similarly to your primary thesis."
+      - "Regime detection — identify which market conditions (trending, ranging, high-VIX) your strategy performs best in."
+    meta:
+      - label: Stage
+        value: Concept
+        color: amber
+      - label: Pre-reqs
+        value: "Strategies · v1.0"
+
+  - id: goal-setting
+    title: "Goal Setting & Stoic Guardrails"
+    category: "Discipline · Risk Management"
+    icon: target
+    status: research
+    statusLabel: "Exploring"
+    description: >-
+      Define what you're shooting for and let the app hold you to it. Goal setting is the accountability layer on top of everything else — you set the targets, the position limits, and the account exposure rules, and Ampliterm surfaces warnings when you're drifting from the parameters you set for yourself. The philosophy is stoic: decide the rules when you're calm, and enforce them when you're not.
+    bullets:
+      - "<strong>Investment goals</strong> — set return targets by timeframe (monthly, quarterly, annual) and track progress against them."
+      - "<strong>Open position limit</strong> — define a maximum number of concurrent open positions. The app warns you before you exceed it."
+      - "<strong>Account vesting limit</strong> — cap the percentage of your account that can be invested at any one time."
+      - "<strong>Stoic prevention prompts</strong> — when you try to place a trade that breaks a rule you set, the app asks you to confirm and log a reason rather than silently allowing it."
+    meta:
+      - label: Stage
+        value: Concept
+        color: amber
+      - label: Pre-reqs
+        value: "Live trading · Dashboard"

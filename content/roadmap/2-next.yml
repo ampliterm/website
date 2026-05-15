@@ -1,0 +1,87 @@
+id: next
+order: 2
+label: "Next"
+quarter: "Q3–Q4 2026"
+tag: next
+tagLabel: "IN PIPELINE"
+dateRange: "Aug — Nov 2026"
+codename: apollo
+intro: "The research terminal grows into a <strong>proactive signal system</strong>. Strategies turns your technical setups into named, reusable rules that the screener watches the whole market against — and notifies you when something's approaching your criteria. The dashboard makes the full picture visible at a glance. And iOS brings it all into your pocket."
+progress:
+  label: "Pipeline progress · design + scoping stage"
+  percent: 15
+  color: cyan
+  stats:
+    - "<strong>15%</strong> design complete"
+    - "<strong>2</strong> features scoping"
+    - "<strong>1</strong> in early prototype"
+features:
+  - id: strategies-screener
+    hero: true
+    title: "Strategies & Stock Screener"
+    category: "Strategy · Screener · Alerts"
+    icon: lightning
+    status: review
+    statusLabel: "Scoping"
+    etaLabel: TARGET
+    eta: "Sep 2026"
+    description: >-
+      Strategies are named, saved combinations of technical indicators that define an entry setup and an exit condition. Once you've built a strategy, the screener watches your entire watchlist — and optionally the broader market — against it in real time. When a stock starts to approach your setup, you get notified before the signal fires, not after. This is the bridge from passive journaling to proactive position management.
+    bullets:
+      - "<strong>Strategy builder</strong> — combine any indicators (EMA crossover, RSI level, RVOL spike, Bollinger touch, etc.) with AND/OR logic into a named, saved setup."
+      - "<strong>Entry and exit rules</strong> — define specific conditions for both sides of a trade so the strategy is fully defined before you look for it."
+      - "<strong>Setup detection</strong> — the screener evaluates your strategy against every symbol in your watchlist and flags ones that are approaching or meeting criteria."
+      - "<strong>Live data processing</strong> — indicator values computed continuously against live price data, not just end-of-day."
+      - "<strong>Notifications</strong> — configurable alerts when a stock enters your setup zone, with a direct link to the chart and a pre-filled journal entry."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Pre-reqs
+        value: "Extended technicals · Live data feed"
+        color: amber
+
+  - id: dashboard
+    title: "Dashboard"
+    category: "Overview · Market"
+    icon: dashboard
+    status: planned
+    statusLabel: "Planned"
+    etaLabel: TARGET
+    eta: "Oct 2026"
+    description: >-
+      A single screen that gives you the full picture every time you open the app. Active positions, what's moving today, upcoming earnings and corporate events — all without clicking into individual stock pages. Built dense, like a terminal should be.
+    bullets:
+      - "<strong>Active trades overview</strong> — open positions with current P&amp;L, entry date, and linked journal entry."
+      - "<strong>Upcoming earnings calendar</strong> — earnings calls for any stock in your watchlist, sorted by date."
+      - "<strong>Corporate actions calendar</strong> — dividends, stock splits, spinoffs, and other events for your holdings."
+      - "<strong>Market overview</strong> — broad index performance and sector rotation at a glance."
+      - "<strong>Top movers by sector</strong> — biggest gainers and losers broken out by sector so you see where the action is."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Data
+        value: "Market data API"
+
+  - id: ios-app
+    title: "Ampliterm for iOS"
+    category: "Mobile · Native"
+    icon: mobile
+    status: planned
+    statusLabel: "Planned"
+    etaLabel: TARGET
+    eta: "Nov 2026"
+    description: >-
+      A full-featured native iOS app — not a mobile-responsive web wrapper. Every feature from the web terminal is present: charts, journal, simulations, strategies, watchlist, and the Alpha Snip capture flow. The intention is complete parity so you can run your research process from your phone when you're away from the desk.
+    bullets:
+      - "<strong>Alpha Snip on iOS</strong> — share any article, link, or text directly to Ampliterm from the iOS share sheet. Cortex processes it the same way as the browser extension."
+      - "<strong>Full chart access</strong> — TradingView charts with all your overlays and strategy markers intact."
+      - "<strong>Journal and watchlist</strong> — create entries, tag tickers, and manage your list from anywhere."
+      - "<strong>Push notifications</strong> — strategy alerts and stock split notifications delivered natively."
+      - "<strong>Biometric auth</strong> — Face ID / Touch ID login on top of your existing 2FA."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Stack
+        value: SwiftUI
+      - label: Pre-reqs
+        value: "Strategies · Alpha Snip"

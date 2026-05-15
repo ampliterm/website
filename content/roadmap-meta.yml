@@ -1,0 +1,80 @@
+eyebrow: "What's next · Q2 2026 → 2027"
+intro: "Where Ampliterm is going. We publish our roadmap because <strong>traders deserve to know what they're building their research practice on</strong> — not just what shipped last week. Below is every milestone we're committed to, what it unlocks, and an honest estimate of when. The destination is <strong>v1.0 with live trading on Alpaca</strong>. Everything between here and there sharpens the tools that will make it worth using."
+liveBuild: "v0.13.0 — Tyche"
+inFlight: "v0.14.0 — Alpha Snip"
+inFlightColor: cy
+target: "Q3 2026"
+featuresQueued: 11
+disclaimer: "Dates are <strong>non-binding targets</strong>. We trade scope before we slip dates — if a feature isn't ready, it gets cut from its milestone and rescheduled, not shipped half-done. Anything past Q4 2026 reflects current intent, not a commitment."
+githubUrl: "#"
+discordUrl: "#"
+timeline:
+  label: "Forward calendar · May '26 — Q2 '27"
+  months:
+    - name: May
+      now: true
+      nowLinePercent: 45
+      markers:
+        - label: "alpha snip · dev"
+          type: commit
+          top: 30
+        - label: "technicals"
+          type: commit
+          top: 55
+    - name: Jun
+      markers:
+        - label: "alpha snip · release"
+          type: commit
+          top: 30
+    - name: Jul
+      markers:
+        - label: "super admin / 2fa"
+          type: commit
+          top: 30
+        - label: "strategies · dev"
+          type: next
+          top: 55
+    - name: Aug
+      markers:
+        - label: "ios · beta"
+          type: next
+          top: 30
+    - name: Sep
+      markers:
+        - label: "strategies · release"
+          type: next
+          top: 30
+        - label: "screener live"
+          type: next
+          top: 55
+    - name: Oct
+      markers:
+        - label: "dashboard"
+          type: next
+          top: 30
+    - name: Nov
+      markers:
+        - label: "ios · release"
+          type: exp
+          top: 30
+    - name: Dec
+      markers:
+        - label: "alpaca · integration"
+          type: exp
+          top: 30
+    - name: Q1 '27
+      markers:
+        - label: "v1.0 · live trading"
+          type: exp
+          top: 30
+        - label: "edgar + ibkr"
+          type: exp
+          top: 55
+    - name: Q2 '27
+      markers:
+        - label: "algo trading"
+          type: research
+          top: 30
+        - label: "goal setting"
+          type: research
+          top: 55
