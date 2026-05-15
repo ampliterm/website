@@ -27,3 +27,6 @@ pnpm-lock.yaml
 
 # Design files
 design/
+
+# Skilld references (recreated by `skilld install`)
+.skilld

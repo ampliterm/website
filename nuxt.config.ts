@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@nuxt/fonts', '@nuxt/image'],
+  modules: [
+    '@nuxt/content',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxtjs/seo',
+  ],
   css: ['~/assets/css/main.css'],
   fonts: {
     families: [
