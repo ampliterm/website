@@ -1,7 +1,7 @@
 version: "0.7.0"
 title: "Self-Host"
 type: minor
-date: "2025-06-20"
+date: "2026-03-20"
 codename: hephaestus
 intro: "Ampliterm is yours to run. A super admin configuration screen lets you set up and manage the system, and an automated install script gets the entire stack running on your own server with a single command. No lock-in, no cloud dependency."
 sections:

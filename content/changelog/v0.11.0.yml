@@ -1,7 +1,7 @@
 version: "0.11.0"
 title: "Cortex"
 type: minor
-date: "2026-03-10"
+date: "2026-05-03"
 codename: prometheus
 intro: "AI enters the terminal. Cortex is the name of Ampliterm's AI agent layer — still a proof of concept, but the wiring is real. The Laravel AI SDK and MCP server are installed, a super admin field controls AI integration, and price predictions now appear in the ticker sidebar with automatic validation when they resolve."
 sections:

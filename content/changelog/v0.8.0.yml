@@ -1,7 +1,7 @@
 version: "0.8.0"
 title: "Terminal Overhaul"
 type: minor
-date: "2025-09-05"
+date: "2026-04-05"
 codename: athena
 intro: "The biggest visual shift in the project's history. The entire UI was torn down and rebuilt as a proper data terminal — dark only, sharp corners, monospace everywhere, JetBrains Mono throughout. Journal entries get a full metadata upgrade too: target price, position size, and bias tags are now first-class fields."
 sections:

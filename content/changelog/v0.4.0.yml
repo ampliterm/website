@@ -1,7 +1,7 @@
 version: "0.4.0"
 title: "Price Targets"
 type: alpha
-date: "2024-12-10"
+date: "2026-01-10"
 codename: cassandra
 intro: "Put your conviction on record. Price predictions let you log a simple thesis — stock, target price, target date — and see it rendered as a marker on the chart. A command palette makes it fast to capture a prediction from anywhere in the app without breaking your flow."
 sections:

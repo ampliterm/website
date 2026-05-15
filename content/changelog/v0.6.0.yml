@@ -1,7 +1,7 @@
 version: "0.6.0"
 title: "Forward Predictions"
 type: minor
-date: "2025-04-05"
+date: "2026-03-05"
 codename: pythia
 intro: "Simulations look backward. This release looks forward. You can now attach forward-looking price predictions to any simulation — estimated price action with a confidence score — and see them rendered directly on the chart alongside the simulation's historical trades."
 sections:

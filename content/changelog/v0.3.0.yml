@@ -1,7 +1,7 @@
 version: "0.3.0"
 title: "Charts"
 type: alpha
-date: "2024-10-18"
+date: "2026-01-02"
 codename: helios
 intro: "The app gets eyes. TradingView Lite charts land on every stock page so you can watch price history, add your watchlist, and — the real unlock — see exactly where each journal entry falls on the price timeline. EMA, SMA, and MACD overlays ship alongside."
 sections:

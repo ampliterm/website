@@ -1,7 +1,7 @@
 version: "0.12.0"
 title: "Performance"
 type: patch
-date: "2026-04-12"
+date: "2026-05-10"
 codename: heracles
 intro: "The app got faster without gaining a single new feature. Partial reloads replace full-page refreshes wherever possible, non-critical data now loads after the initial render, and a Z-index bug that caused journal entries clicked from the chart to behave strangely is finally gone."
 sections:

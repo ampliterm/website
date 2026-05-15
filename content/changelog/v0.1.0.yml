@@ -1,7 +1,7 @@
 version: "0.1.0"
 title: "Foundations"
 type: alpha
-date: "2024-06-15"
+date: "2025-12-21"
 codename: nyx
 intro: "The very first commit. User accounts exist, sessions persist, and you can write words into a box and save them. That's it. That's the whole app. Everything has to start somewhere."
 sections:

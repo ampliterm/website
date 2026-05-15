@@ -1,7 +1,7 @@
 version: "0.10.0"
 title: "Maintenance"
 type: patch
-date: "2026-01-22"
+date: "2026-05-01"
 codename: cronus
 intro: "Keeping the foundation solid. Laravel 13 and InertiaJS 3.0 are in, the price prediction page got a full redesign, and a new cron job keeps historic ticker data synced automatically — whether you're pulling from Massive.com CSV exports or a free API plan."
 sections:

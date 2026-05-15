@@ -1,7 +1,7 @@
 version: "0.13.0"
 title: "Consistency"
 type: patch
-date: "2026-05-08"
+date: "2026-05-11"
 codename: tyche
 intro: "Small features, meaningful habits. Stock splits no longer silently break price predictions — splits are detected, predictions adjusted, and users notified. A super admin audit log tracks every system action, and a daily email prompt keeps journaling consistent on every trading day."
 sections:
