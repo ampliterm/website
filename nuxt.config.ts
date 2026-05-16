@@ -17,10 +17,17 @@ export default defineNuxtConfig({
       },
     ],
   },
+  app: {
+    baseURL: '/',
+    buildAssetsDir: 'assets'
+  },
   content: {
     highlight: {
       theme: 'github-dark',
     },
+  },
+  nitro: {
+    preset: 'github-pages'
   },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
