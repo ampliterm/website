@@ -1,10 +1,11 @@
 <script setup lang="ts">
 defineProps({
   activePage: { type: String, default: '' },
-  ctaLabel: { type: String, default: 'Get Ampliterm — $999' },
-  ctaHref: { type: String, default: '/#pricing' },
   variant: { type: String as () => 'default' | 'docs', default: 'default' },
+  ctaLabel: { type: String, default: 'Join the waitlist' },
 })
+
+const emit = defineEmits<{ (e: 'prompt-waitlist'): void }>()
 
 const links = [
   { label: 'Roadmap',   href: '/roadmap',    page: 'roadmap' },
@@ -35,9 +36,7 @@ const links = [
     </div>
 
     <div class="nav-right">
-      <slot name="right">
-        <a class="nav-cta" :href="ctaHref">{{ ctaLabel }}</a>
-      </slot>
+      <button class="nav-cta" @click="emit('prompt-waitlist')">{{ ctaLabel }}</button>
     </div>
   </nav>
 </template>

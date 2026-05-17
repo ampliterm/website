@@ -21,6 +21,12 @@ useHead({
   title: computed(() => `${page.value?.title ?? 'Docs'} — Ampliterm`),
 })
 
+defineOgImage('Ampliterm', {
+  eyebrow: 'DOCS',
+  title: page.value?.title ?? 'Documentation',
+  description: page.value?.description,
+})
+
 const eyebrowClass = computed(() => {
   const badge = page.value?.badge
   return badge === 'api' ? 'eyebrow-tag--api' : 'eyebrow-tag--guide'

@@ -43,6 +43,12 @@ useHead({
     { name: 'description', content: 'Strategy breakdowns, trading psychology, technical analysis primers, and deep-dives into how serious traders actually build an edge.' },
   ],
 })
+
+defineOgImage('Ampliterm', {
+  eyebrow: 'BLOG',
+  title: 'Research Blog',
+  description: 'Strategy breakdowns, trading psychology, and deep-dives into how serious traders actually build an edge.',
+})
 </script>
 
 <template>

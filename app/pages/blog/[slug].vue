@@ -7,6 +7,8 @@ const { data: page } = await useAsyncData(`blog-${path}`, () =>
   queryCollection('blog').path(path).first(),
 )
 
+const waitlistOpen = ref(false)
+
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
@@ -73,12 +75,18 @@ useHead({
     { name: 'description', content: computed(() => page.value?.excerpt ?? '') },
   ],
 })
+
+defineOgImage('Ampliterm', {
+  eyebrow: (page.value?.category as string | undefined)?.toUpperCase() ?? 'BLOG',
+  title: page.value?.title ?? 'Article',
+  description: page.value?.excerpt,
+})
 </script>
 
 <template>
   <div v-if="page">
     <BlogReadProgress />
-    <AppNav active-page="blog" />
+    <AppNav active-page="blog" @prompt-waitlist="waitlistOpen = true" />
 
     <div class="breadcrumb-bar">
       <nav class="breadcrumb">
@@ -216,7 +224,7 @@ useHead({
           <div class="sc-eyebrow">// Try it yourself</div>
           <div class="sc-title">Research. Simulate. Review.</div>
           <div class="sc-body">The workflow described in this article is built into Ampliterm. One-time purchase, self-hosted, your data stays yours.</div>
-          <a class="sc-btn" href="/#pricing">Get Ampliterm — $999</a>
+          <button class="sc-btn" @click="waitlistOpen = true">Join the waitlist</button>
         </div>
       </aside>
     </div>
@@ -253,6 +261,7 @@ useHead({
     </div>
 
     <AppFooter />
+    <WaitlistModal :open="waitlistOpen" @close="waitlistOpen = false" />
   </div>
 </template>
 

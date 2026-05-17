@@ -3,6 +3,8 @@ const { data: releases } = await useAsyncData('changelog', () =>
   queryCollection('changelog').order('date', 'DESC').all()
 )
 
+const waitlistOpen = ref(false)
+
 const activeId = ref<string>('')
 
 const versionId = (version: string) => `v${version.replace(/\./g, '-')}`
@@ -61,16 +63,22 @@ const scrollTo = (version: string) => {
 }
 
 useHead({
-  title: 'Changelog — Ampliterm',
+  title: 'Changelog',
   meta: [
     { name: 'description', content: 'Every shipped feature, fix, and breaking change in Ampliterm — in chronological order, with full transparency.' },
   ],
+})
+
+defineOgImage('Ampliterm', {
+  eyebrow: 'CHANGELOG',
+  title: 'Changelog',
+  description: 'Every shipped feature, fix, and breaking change — in chronological order, with full transparency.',
 })
 </script>
 
 <template>
   <div>
-    <AppNav active-page="changelog" />
+    <AppNav active-page="changelog" @prompt-waitlist="waitlistOpen = true" />
 
     <!-- ── PAGE HEADER ── -->
     <section class="page-header">
@@ -148,6 +156,8 @@ useHead({
     </div>
 
     <AppFooter />
+
+    <WaitlistModal :open="waitlistOpen" @close="waitlistOpen = false" />
   </div>
 </template>
 

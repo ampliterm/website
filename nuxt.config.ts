@@ -5,7 +5,13 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxtjs/seo',
+    '@nuxtjs/plausible',
   ],
+  plausible: {
+    apiHost: 'https://a.521dimensions.com',
+    domain: 'ampliterm.com',
+    autoOutboundTracking: true,
+  },
   css: ['~/assets/css/main.css'],
   fonts: {
     families: [
@@ -19,7 +25,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: '/',
-    buildAssetsDir: 'assets'
+    buildAssetsDir: '_nuxt'
   },
   content: {
     highlight: {
@@ -28,6 +34,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'github-pages'
+  },
+  site: {
+    url: 'https://ampliterm.com',
+    name: 'Ampliterm'
   },
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',

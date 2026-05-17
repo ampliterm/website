@@ -70,6 +70,8 @@ const { data: milestones } = await useAsyncData('roadmap-milestones', () =>
   queryCollection('roadmap').order('order', 'ASC').all(),
 ) as { data: Ref<Milestone[] | null> }
 
+const waitlistOpen = ref(false)
+
 const activeId = ref<string>('')
 
 const sidebarPill: Record<string, string> = {
@@ -112,16 +114,22 @@ const scrollTo = (id: string) => {
 }
 
 useHead({
-  title: 'Roadmap — Ampliterm',
+  title: 'Roadmap',
   meta: [
     { name: 'description', content: 'Where Ampliterm is going. Every committed milestone, what it unlocks, and an honest estimate of when.' },
   ],
+})
+
+defineOgImage('Ampliterm', {
+  eyebrow: 'ROADMAP',
+  title: 'Roadmap',
+  description: 'Every committed milestone, what it unlocks, and an honest estimate of when.',
 })
 </script>
 
 <template>
   <div>
-    <AppNav active-page="roadmap" />
+    <AppNav active-page="roadmap" @prompt-waitlist="waitlistOpen = true" />
 
     <!-- ── PAGE HEADER ── -->
     <section class="page-header">
@@ -283,6 +291,8 @@ useHead({
     </section> -->
 
     <AppFooter />
+
+    <WaitlistModal :open="waitlistOpen" @close="waitlistOpen = false" />
   </div>
 </template>
 

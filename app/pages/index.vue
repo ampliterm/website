@@ -148,16 +148,21 @@ const terminalCta = {
 }
 
 useHead({
-  title: 'Ampliterm — The Research Terminal for Serious Traders',
+  title: 'The Research Terminal for Serious Traders',
   meta: [
     { name: 'description', content: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.' },
   ],
+})
+
+defineOgImage('Ampliterm', {
+  title: 'Trade with evidence, not instinct.',
+  description: 'Self-hosted research terminal for serious traders. One-time payment. Your data stays yours.',
 })
 </script>
 
 <template>
   <div>
-    <AppNav />
+    <AppNav @prompt-waitlist="waitlistOpen = true" />
 
     <!-- ── HERO ── -->
     <section class="hero">
