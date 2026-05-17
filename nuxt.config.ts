@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/image',
-    '@nuxtjs/seo',
     '@nuxtjs/plausible',
   ],
   plausible: {
