@@ -154,9 +154,18 @@ useHead({
   ],
 })
 
-defineOgImage('Ampliterm', {
-  title: 'Trade with evidence, not instinct.',
-  description: 'Self-hosted research terminal for serious traders. One-time payment. Your data stays yours.',
+useSeoMeta({
+  title: 'The Research Terminal for Serious Traders',
+  description: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.',
+  ogImage: 'https://ampliterm.com/og/home-og.png',
+  ogTitle: 'The Research Terminal for Serious Traders',
+  ogDescription: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.',
+  ogUrl: 'https://ampliterm.com',
+  ogType: 'website',
+  ogLocale: 'en_US',
+  ogSiteName: 'Ampliterm',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 </script>
 

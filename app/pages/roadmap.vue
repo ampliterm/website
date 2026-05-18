@@ -120,10 +120,18 @@ useHead({
   ],
 })
 
-defineOgImage('Ampliterm', {
-  eyebrow: 'ROADMAP',
+useSeoMeta({
   title: 'Roadmap',
-  description: 'Every committed milestone, what it unlocks, and an honest estimate of when.',
+  description: 'Where Ampliterm is going. Every committed milestone, what it unlocks, and an honest estimate of when.',
+  ogImage: 'https://ampliterm.com/og/roadmap-og.png',
+  ogTitle: 'Roadmap',
+  ogDescription: 'Where Ampliterm is going. Every committed milestone, what it unlocks, and an honest estimate of when.',
+  ogUrl: 'https://ampliterm.com/roadmap',
+  ogType: 'website',
+  ogLocale: 'en_US',
+  ogSiteName: 'Ampliterm',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 </script>
 

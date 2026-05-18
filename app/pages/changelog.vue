@@ -69,10 +69,18 @@ useHead({
   ],
 })
 
-defineOgImage('Ampliterm', {
-  eyebrow: 'CHANGELOG',
+useSeoMeta({
   title: 'Changelog',
-  description: 'Every shipped feature, fix, and breaking change — in chronological order, with full transparency.',
+  description: 'Every shipped feature, fix, and breaking change in Ampliterm — in chronological order, with full transparency.',
+  ogImage: 'https://ampliterm.com/og/changelog-og.png',
+  ogTitle: 'Changelog',
+  ogDescription: 'Every shipped feature, fix, and breaking change in Ampliterm — in chronological order, with full transparency.',
+  ogUrl: 'https://ampliterm.com/changelog',
+  ogType: 'website',
+  ogLocale: 'en_US',
+  ogSiteName: 'Ampliterm',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 </script>
 
