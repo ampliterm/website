@@ -8,6 +8,7 @@ defineProps<{
     author?: { name: string; initials: string; role: string } | null
     tags: Array<{ label: string; variant: 'cyan' | 'green' | 'amber' | 'red' | 'neutral' }>
     imagePlaceholder?: string
+    headerImage?: string
   }
 }>()
 
@@ -19,7 +20,10 @@ const formatDate = (d: string) =>
 
 <template>
   <div class="featured-card">
-    <div class="featured-image">
+    <div v-if="post.headerImage" class="featured-image">
+      <img :src="post.headerImage" :alt="post.title" class="featured-img">
+    </div>
+    <div v-else class="featured-image">
       <div class="img-bg" />
       <svg class="featured-chart" width="340" height="180" viewBox="0 0 340 180" fill="none">
         <line x1="0" y1="40" x2="340" y2="40" stroke="#2a2a2a" stroke-width=".6" />
@@ -105,6 +109,13 @@ const formatDate = (d: string) =>
   gap: 16px;
   padding: 40px;
 }
+.featured-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .img-bg {
   position: absolute;
   inset: 0;
@@ -117,7 +128,7 @@ const formatDate = (d: string) =>
   );
   opacity: 0.5;
 }
-.featured-chart { position: relative; z-index: 1; }
+.featured-chart { position: relative; z-index: 1; max-width: 100%; height: auto; }
 .img-label {
   position: relative;
   z-index: 1;

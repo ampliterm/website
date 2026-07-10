@@ -73,6 +73,12 @@ onUnmounted(() => observer?.disconnect())
   padding: 32px 20px 40px;
 }
 
+@media (max-width: 1100px) {
+  .toc-col {
+    display: none;
+  }
+}
+
 .toc-col::-webkit-scrollbar { width: 4px; }
 .toc-col::-webkit-scrollbar-track { background: var(--bg-0); }
 .toc-col::-webkit-scrollbar-thumb { background: var(--bg-3); }

@@ -328,5 +328,11 @@ useSeoMeta({
 @media (max-width: 640px) {
   .posts-grid { grid-template-columns: 1fr; }
   .filter-btn { padding: 0 10px; font-size: 9px; }
+  .filter-bar-inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filter-btn { flex-shrink: 0; }
+  .filter-right { flex-shrink: 0; padding-left: 12px; }
 }
 </style>

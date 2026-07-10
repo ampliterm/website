@@ -16,6 +16,7 @@ category: fundamentals
 readTime: 12 min read
 featured: false
 imagePlaceholder: SEC Filings and Fundamentals View
+headerImage: "/headers/blog-sec-filings-header.png"
 ogImage: "/og/blog-sec-filings-og.png"
 ---
 

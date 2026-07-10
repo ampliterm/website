@@ -95,6 +95,24 @@ function isOpen(name: string) {
   padding: 24px 0 48px;
 }
 
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    top: 92px;
+    left: 0;
+    width: min(300px, 85vw);
+    height: calc(100vh - 92px);
+    z-index: 96;
+    border-right: 1px solid var(--border-1);
+    transform: translateX(-100%);
+    transition: transform 0.15s ease-out;
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+}
+
 .sidebar::-webkit-scrollbar { width: 4px; }
 .sidebar::-webkit-scrollbar-track { background: var(--bg-1); }
 .sidebar::-webkit-scrollbar-thumb { background: var(--bg-3); }

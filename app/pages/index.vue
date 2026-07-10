@@ -887,5 +887,41 @@ useSeoMeta({
     min-width: 120px;
     padding: 0 20px;
   }
+
+  .pricing-inner {
+    gap: 40px;
+  }
+
+  .terminal-cta {
+    padding: 56px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
+
+  .metric-item {
+    min-width: 0;
+    padding: 0 16px;
+  }
+
+  .metric-item:nth-child(odd) { padding-left: 0; }
+  .metric-item:nth-child(2n) { border-right: none; }
+
+  .metric-val {
+    font-size: 22px;
+  }
+
+  .feature-card {
+    padding: 24px 20px;
+  }
+
+  .price-card {
+    padding: 24px 20px;
+  }
 }
 </style>

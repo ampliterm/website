@@ -119,8 +119,11 @@ const links = [
 
 @media (max-width: 900px) {
   .footer {
+    padding: 24px 20px;
+  }
+
+  .footer-row {
     flex-wrap: wrap;
-    padding: 24px;
     gap: 16px;
   }
 

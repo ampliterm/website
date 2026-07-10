@@ -9,6 +9,7 @@ defineProps<{
     tags: Array<{ label: string; variant: 'cyan' | 'green' | 'amber' | 'red' | 'neutral' }>
     readTime: string
     imagePlaceholder?: string
+    headerImage?: string
   }
 }>()
 
@@ -22,8 +23,11 @@ const formatDate = (d: string) =>
 <template>
   <NuxtLink :to="post.path" class="post-card">
     <div class="post-card-image">
-      <div class="post-card-img-strip" />
-      <div class="post-card-img-label">{{ post.imagePlaceholder ?? 'Blog post image' }}</div>
+      <img v-if="post.headerImage" :src="post.headerImage" :alt="post.title" class="post-card-img">
+      <template v-else>
+        <div class="post-card-img-strip" />
+        <div class="post-card-img-label">{{ post.imagePlaceholder ?? 'Blog post image' }}</div>
+      </template>
     </div>
     <div class="post-card-body">
       <div class="post-card-tags">
@@ -67,6 +71,13 @@ const formatDate = (d: string) =>
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--border-0);
+}
+.post-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .post-card-img-strip {
   position: absolute;

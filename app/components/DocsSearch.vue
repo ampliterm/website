@@ -149,6 +149,18 @@ function excerpt(content: string) {
   flex-shrink: 0;
 }
 
+@media (max-width: 900px) {
+  .nav-search {
+    width: auto;
+    padding: 7px 9px;
+  }
+
+  .nav-search-placeholder,
+  .nav-search-kbd {
+    display: none;
+  }
+}
+
 /* Modal overlay */
 .search-overlay {
   position: fixed;
@@ -158,7 +170,13 @@ function excerpt(content: string) {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 80px;
+  padding: 80px 16px 0;
+}
+
+@media (max-width: 640px) {
+  .search-overlay {
+    padding-top: 64px;
+  }
 }
 
 .search-modal {

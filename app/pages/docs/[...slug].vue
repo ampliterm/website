@@ -392,4 +392,29 @@ const eyebrowClass = computed(() => {
   border-color: var(--cyan);
   color: var(--text-0);
 }
+
+/* ── Mobile ── */
+@media (max-width: 720px) {
+  .doc-body :deep(table) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .doc-body :deep(thead th),
+  .doc-body :deep(tbody td) {
+    white-space: nowrap;
+  }
+
+  .doc-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+  }
+
+  .doc-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
 </style>

@@ -73,6 +73,9 @@ export default defineContentConfig({
         readTime: z.string().default(''),
         featured: z.boolean().default(false),
         imagePlaceholder: z.string().optional(),
+        // Path under public/ to a static header image (e.g. "/headers/blog-sec-filings-header.png").
+        // Shown in the post hero, index card, and featured slot; placeholder art renders when unset.
+        headerImage: z.string().optional(),
         // Path under public/ to a static OG image (e.g. "/og/blog-sec-filings-og.png").
         // When set, it overrides the default dynamic nuxt-og-image template.
         ogImage: z.string().optional(),

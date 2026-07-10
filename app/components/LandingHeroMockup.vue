@@ -426,4 +426,33 @@ const ticker = [
   border-color: var(--amber);
   background: var(--amber-dim);
 }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .mockup-sidebar {
+    display: none;
+  }
+
+  .mockup-chart-col {
+    border-right: none;
+  }
+
+  .mockup-body {
+    height: 300px;
+  }
+
+  .mockup-ticker {
+    flex-wrap: wrap;
+  }
+
+  .tick-item {
+    flex: 1;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-0);
+  }
+
+  .mockup-chart-controls {
+    overflow: hidden;
+  }
+}
 </style>

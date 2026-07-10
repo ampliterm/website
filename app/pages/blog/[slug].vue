@@ -137,7 +137,10 @@ if (page.value?.ogImage) {
     </div>
 
     <div class="hero-image">
-      <div class="hero-image-frame">
+      <div v-if="page.headerImage" class="hero-image-frame">
+        <img :src="page.headerImage" :alt="page.title" class="hero-img">
+      </div>
+      <div v-else class="hero-image-frame">
         <div class="hi-strip" />
         <svg width="560" height="240" viewBox="0 0 560 240" fill="none" class="hi-chart">
           <line x1="0" y1="48" x2="560" y2="48" stroke="#222" stroke-width=".7" />
@@ -410,6 +413,13 @@ if (page.value?.ogImage) {
   flex-direction: column;
   gap: 20px;
 }
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .hi-strip {
   position: absolute;
   inset: 0;
@@ -445,7 +455,15 @@ if (page.value?.ogImage) {
   align-items: start;
 }
 
+.article-body {
+  min-width: 0;
+}
+
 /* ── Prose ── */
+.article-prose {
+  overflow-wrap: break-word;
+}
+
 .article-prose :deep(h2) {
   font-size: 20px;
   font-weight: 700;
@@ -510,6 +528,32 @@ if (page.value?.ogImage) {
   padding: 1px 5px;
   font-size: 11px;
   color: var(--green);
+}
+.article-prose :deep(pre) {
+  background: var(--bg-2);
+  border: 1px solid var(--border-1);
+  padding: 16px;
+  margin: 16px 0 24px;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.article-prose :deep(pre code) {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+.article-prose :deep(table) {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 12px 0 24px;
+  font-size: 12px;
 }
 .article-prose :deep(ul),
 .article-prose :deep(ol) {
