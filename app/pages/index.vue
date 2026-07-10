@@ -9,20 +9,20 @@ const waitlistOpen = ref(false)
 ───────────────────────────────────────────────────────────── */
 
 const hero = {
-  eyebrow: 'Self-hosted research terminal',
+  eyebrow: 'The strategy layer your brokerage account is missing',
   headlinePre: 'Trade with',
   headlineMid: 'evidence,',
   headlineEnd: 'not',
   headlineAccent: 'instinct.',
   subtext:
-    'Ampliterm is the research terminal built for <strong>serious day and swing traders</strong>. Journal your setups, run simulations against your thesis, aggregate alpha, design trading strategies, execute trades, and more — all on your own server.',
+    'Ampliterm is the <strong>self-hosted strategy layer</strong> for your brokerage account. Build trading logic as explicit, testable rules — backtest it against history, screen the market for it nightly, and when it fires, Ampliterm places the trade on your own <strong>Alpaca</strong> account. IBKR is next.',
   ctaPrimary:   { label: 'Join the waitlist', href: '#pricing' },
   ctaSecondary: { label: 'See features →',       href: '#features' },
-  notes: ['One-time payment.', 'Self-hosted, forever.', 'Your data stays yours.'],
+  notes: ['One-time payment.', 'Self-hosted, forever.', 'Trades execute on your brokerage account.'],
 }
 
 const metrics = [
-  { value: '∞',    accent: '',  label: 'No subscription, ever' },
+  { value: '1',    accent: '',  label: 'Engine — backtest · screen · trade' },
   { value: '100',  accent: '%', label: 'Your data, your server' },
   { value: '1',    accent: '×', label: 'One-time payment' },
   { value: '0',    accent: '',  label: 'Third-party data brokers' },
@@ -32,24 +32,35 @@ const features = {
   eyebrow: 'Features',
   headline: 'Everything serious traders need.\nNothing they don\'t.',
   subtext:
-    'Built around the actual workflow of a research-driven trader — not a simplified app designed for beginners.',
+    'Built for retail investors on Alpaca who want their strategy logic to be as rigorous as their broker\'s execution — not a simplified app designed for beginners.',
   items: [
     {
-      name: 'Research Journal',
-      desc: 'Write rich-text entries with a full-featured editor. Tag stocks inline with <span class="ticker-inline">$TICKER</span> syntax — entries are automatically linked to the relevant symbol. Track entry, target, stop, and position size on every note.',
-      tag: 'TipTap · $TICKER tagging · Autosave',
+      name: 'Strategy Builder',
+      desc: 'Compose trading logic as an explicit trigger → confirmation tree with per-condition timing windows. Add bail-out guards, exit logic, stop/target/trailing/time risk rules, position sizing, and an optional AI confirmation gate — every rule inspectable, every strategy reusable across tickers.',
+      tag: 'ALL/ANY logic · Risk rules · AI gate',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <rect x="2" y="2" width="12" height="2" fill="#00e676" opacity=".6"/>
-        <rect x="2" y="6" width="9" height="1.5" fill="#00e676" opacity=".4"/>
-        <rect x="2" y="9.5" width="11" height="1.5" fill="#00e676" opacity=".4"/>
-        <rect x="2" y="13" width="7" height="1.5" fill="#00e676" opacity=".3"/>
+        <rect x="6" y="1" width="4" height="3" fill="none" stroke="#00e676" stroke-width="1.2"/>
+        <rect x="1" y="11" width="4" height="3" fill="none" stroke="#00e676" stroke-width="1.2" opacity=".7"/>
+        <rect x="11" y="11" width="4" height="3" fill="none" stroke="#00e676" stroke-width="1.2" opacity=".7"/>
+        <path d="M8 4v3M8 7H3v4M8 7h5v4" stroke="#00e676" stroke-width="1" opacity=".5"/>
       </svg>`,
     },
     {
-      name: 'Simulations',
-      desc: 'Run simulations and backtests against any symbol. Model bull, base, and bear scenarios with adjustable parameters. See probability distributions, success rates, and return distributions before entering a position.',
-      tag: 'Backtesting · Scenario modeling',
+      name: 'Automated Trading',
+      desc: 'Deploy a strategy onto a ticker and the engine trades it on your own Alpaca account. Paper-first by design — simulated local fills, then Alpaca paper, then live behind deliberate safeguards — with a portfolio risk governor, daily-loss kill switch, and broker-resting protective stops.',
+      tag: 'Alpaca · Paper-first · Risk governor',
+      soon: false,
+      icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="9" width="14" height="6" fill="none" stroke="#00e676" stroke-width="1.2"/>
+        <path d="M8 1v5.5M5.5 4.5 8 7l2.5-2.5" fill="none" stroke="#00e676" stroke-width="1.2"/>
+        <rect x="4" y="11.5" width="8" height="1" fill="#00e676" opacity=".4"/>
+      </svg>`,
+    },
+    {
+      name: 'Backtesting',
+      desc: 'Replay any strategy against history through the exact engine that trades live — closed candles only, no look-ahead. Inspect every trade, every trigger that didn\'t survive confirmation, and honest fill assumptions with pessimistic gap-through stops.',
+      tag: 'One engine · Honest fills',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <polyline points="1,13 5,7 8,9 11,4 15,6" fill="none" stroke="#00b8d4" stroke-width="1.5"/>
@@ -58,9 +69,29 @@ const features = {
       </svg>`,
     },
     {
-      name: 'Integrated Charts',
-      desc: 'TradingView-powered candlestick charts with full technical overlay support. Toggle SMA 20/50/200, Bollinger Bands, VWAP, and so many more! Sub-panel indicators including RSI, MACD, and volume.',
-      tag: 'TradingView · Technical overlays',
+      name: 'Nightly Screener',
+      desc: 'Every weekday close, your screener-enabled strategies sweep your watchlist and tier the results: triggered, alert, or warning — with streak tracking and an email digest. Jump from any hit into a pre-filled backtest in one click.',
+      tag: 'EOD screen · Email digest',
+      soon: false,
+      icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <polygon points="8,1 15,14 1,14" fill="none" stroke="#00e676" stroke-width="1.2"/>
+        <line x1="5" y1="10" x2="11" y2="10" stroke="#00e676" stroke-width="1" opacity=".5"/>
+      </svg>`,
+    },
+    {
+      name: 'Cortex AI',
+      desc: 'A conversational analyst inside the terminal. It evaluates indicators with the engine\'s own math, reads your open trades and journal for context, and critiques strategy drafts as you build them. Bring your own AI key — every response is analysis, never advice.',
+      tag: 'Analysis · Never advice',
+      soon: false,
+      icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 1v14M1 8h14M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" stroke="#00b8d4" stroke-width="1" opacity=".35"/>
+        <circle cx="8" cy="8" r="2.5" fill="none" stroke="#00b8d4" stroke-width="1.2"/>
+      </svg>`,
+    },
+    {
+      name: 'Charts & Indicators',
+      desc: 'Candlestick charts with SMA, EMA, Bollinger Bands, VWAP, RSI, MACD, ATR, and relative volume — every value computed server-side by the same code the engine trades on. The RSI on your chart is the RSI your strategy fires on.',
+      tag: 'TradingView Lightweight Charts',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="1" y="6" width="14" height="1" fill="#f5a623" opacity=".3"/>
@@ -71,29 +102,33 @@ const features = {
       </svg>`,
     },
     {
-      name: 'Alpha Sources',
-      desc: 'Aggregate signals and news from any source into a unified feed per symbol.',
-      tag: 'Alpha sources · News aggregation',
-      soon: true,
+      name: 'SEC EDGAR Fundamentals',
+      desc: 'Financials pulled straight from sec.gov — standardized XBRL metrics across the income statement, balance sheet, and cash flow, plus filings with AI summaries and sentiment. Every number traceable to the exact filing that reported it. No data vendor, no extra fees.',
+      tag: 'Primary source · No data fees',
+      soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <rect x="1" y="3" width="14" height="2.5" fill="none" stroke="#00b8d4" stroke-width="1"/>
-        <rect x="1" y="7.5" width="14" height="2.5" fill="none" stroke="#00b8d4" stroke-width="1" opacity=".6"/>
-        <rect x="1" y="12" width="14" height="2.5" fill="none" stroke="#00b8d4" stroke-width="1" opacity=".3"/>
+        <path d="M3 1h7l3 3v11H3z" fill="none" stroke="#f5a623" stroke-width="1.2"/>
+        <path d="M10 1v3h3" fill="none" stroke="#f5a623" stroke-width="1"/>
+        <rect x="5" y="7" width="6" height="1" fill="#f5a623" opacity=".5"/>
+        <rect x="5" y="9.5" width="6" height="1" fill="#f5a623" opacity=".5"/>
+        <rect x="5" y="12" width="4" height="1" fill="#f5a623" opacity=".5"/>
       </svg>`,
     },
     {
-      name: 'Watchlist Screener',
-      desc: 'Track your universe of stocks in a dense, Bloomberg-style table. Filter by signal, sort by momentum, and jump directly to any stock\'s chart or journal with a single keystroke.',
-      tag: 'Screener · Signal columns',
-      soon: true,
+      name: 'Research Suite',
+      desc: 'A markdown journal with automatic <span class="ticker-inline">$TICKER</span> detection, an Intel feed that captures articles, files, and transcripts (with a browser extension for clipping), and price predictions that score your calls against what actually happened.',
+      tag: 'Journal · Intel · Predictions',
+      soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <polygon points="8,1 15,14 1,14" fill="none" stroke="#00e676" stroke-width="1.2"/>
-        <line x1="5" y1="10" x2="11" y2="10" stroke="#00e676" stroke-width="1" opacity=".5"/>
+        <rect x="2" y="2" width="12" height="2" fill="#00e676" opacity=".6"/>
+        <rect x="2" y="6" width="9" height="1.5" fill="#00e676" opacity=".4"/>
+        <rect x="2" y="9.5" width="11" height="1.5" fill="#00e676" opacity=".4"/>
+        <rect x="2" y="13" width="7" height="1.5" fill="#00e676" opacity=".3"/>
       </svg>`,
     },
     {
       name: 'Self-Hosted & Private',
-      desc: 'Deploy Ampliterm on your own server or local machine. Your trade data, journal entries, and research never touch a third-party database. One-time purchase. No SaaS fees. No expiry.',
+      desc: 'Runs entirely on your server as licensed Docker images. Your broker keys, trade history, and research never leave hardware you control. One-time purchase. No SaaS fees. No telemetry.',
       tag: 'Self-hosted · No telemetry · Lifetime license',
       soon: false,
       icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -111,20 +146,21 @@ const pricing = {
   subtext:
     'No monthly fees. No per-seat pricing. No data access charges. Pay once, self-host, and use Ampliterm as long as you trade. Your data stays yours.',
   tier: 'Professional License',
-  price: 999,
-  cadence: 'One-time payment · Self-hosted',
+  price: 'One-time',
+  cadence: 'Founding price announced at launch',
   items: [
-    'Research journal with full-featured editor + $TICKER tagging',
-    'Integrated TradingView charts with technical overlays',
-    'Simulations and backtests',
-    'Alpha source aggregation',
-    'Watchlist screener',
-    'Full source code for self-hosting',
+    'Strategy builder with a 15-condition catalog',
+    'Automated trading on your Alpaca account — paper & live modes',
+    'Unlimited backtests on the same engine that trades',
+    'Nightly strategy screener with email digests',
+    'Cortex AI assistant (bring your own AI key)',
+    'SEC EDGAR fundamentals & filings with AI summaries',
+    'Research journal, Intel capture & price predictions',
     'One year of feature updates included',
   ],
   comparison: [
     { label: 'Lifetime license — no renewal',       included: true },
-    { label: 'Full source access for self-hosting', included: true },
+    { label: 'Runs entirely on your server — licensed Docker images', included: true },
     { label: 'All current features',                included: true },
     { label: 'One year of feature updates included',included: true },
     { label: 'Your data stays on your server',      included: true },
@@ -135,31 +171,31 @@ const pricing = {
   ],
   ctaLabel: 'Join the waitlist',
   ctaHref: '#',
-  footnote: 'One-time payment · Lifetime license\nSelf-host on any server or local machine',
+  footnote: 'Lifetime license · No renewal, ever\nSelf-host on any server or local machine\nRequires an Alpaca account — data & execution run on your own brokerage connection',
 }
 
 const terminalCta = {
   comment: '// ready to trade with evidence?',
-  command: '$ ampliterm --start-trading',
+  command: '$ ampliterm --deploy-strategy',
   subtext:
-    'Join traders who document every setup, simulate every thesis, and keep their edge compounding — on their own terms.',
+    'Join traders who build their logic as testable rules, backtest every thesis, and let discipline they defined in advance place the trade — on their own server, on their own terms.',
   ctaLabel: 'Join the waitlist',
   ctaHref: '#pricing',
 }
 
 useHead({
-  title: 'The Research Terminal for Serious Traders',
+  title: 'The Strategy Layer for Your Brokerage Account',
   meta: [
-    { name: 'description', content: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.' },
+    { name: 'description', content: 'Self-hosted strategy builder that backtests, screens, and executes trades on your own Alpaca account. Build explicit trading logic, test it against history, deploy it paper-first. One-time payment.' },
   ],
 })
 
 useSeoMeta({
-  title: 'The Research Terminal for Serious Traders',
-  description: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.',
+  title: 'The Strategy Layer for Your Brokerage Account',
+  description: 'Self-hosted strategy builder that backtests, screens, and executes trades on your own Alpaca account. Build explicit trading logic, test it against history, deploy it paper-first. One-time payment.',
   ogImage: 'https://ampliterm.com/og/home-og.png',
-  ogTitle: 'The Research Terminal for Serious Traders',
-  ogDescription: 'Self-hosted trading research terminal. Journal your setups, run simulations, and aggregate alpha — on your own server. One-time payment.',
+  ogTitle: 'The Strategy Layer for Your Brokerage Account',
+  ogDescription: 'Self-hosted strategy builder that backtests, screens, and executes trades on your own Alpaca account. Build explicit trading logic, test it against history, deploy it paper-first. One-time payment.',
   ogUrl: 'https://ampliterm.com',
   ogType: 'website',
   ogLocale: 'en_US',
@@ -266,7 +302,7 @@ useSeoMeta({
         <div class="pricing-right">
           <div class="price-card">
             <div class="price-tier">{{ pricing.tier }}</div>
-            <div class="price-amount"><sub>$</sub>{{ pricing.price }}</div>
+            <div class="price-amount">{{ pricing.price }}</div>
             <div class="price-cadence">{{ pricing.cadence }}</div>
             <hr class="price-divider">
             <ul class="price-list">

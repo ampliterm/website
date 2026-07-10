@@ -1,91 +1,100 @@
 id: later
 order: 3
 label: "Later"
-quarter: "Q1–Q2 2027"
+quarter: "2027"
 tag: later
 tagLabel: "PLANNED"
 dateRange: "Q1 — Q2 2027"
 codename: zeus
-intro: "<strong>v1.0 lives here.</strong> Live trading via Alpaca is the milestone that earns the 1.0 label — the point where Ampliterm is no longer just a research terminal but a place you can act on your research. Algorithmic trading and institutional data connections follow. Less granular by design; engineering estimates beyond Q4 2026 aren't trustworthy enough to be specific."
+intro: "With v1.0 in validation now instead of a year out, <strong>Later is about breadth</strong>: a second broker, live position monitoring you can act on, and the engine features that reward patience. Less granular by design — engineering estimates this far out aren't trustworthy enough to be specific."
 progress:
   label: "Discovery · scoping + architecture stage"
-  percent: 8
+  percent: 10
   color: amber
   stats:
-    - "<strong>0</strong> code written"
-    - "<strong>3</strong> features scoping"
-    - "review window <strong>Q4 2026</strong>"
+    - "<strong>4</strong> features scoping"
+    - "engine seams <strong>already built</strong>"
+    - "review window <strong>Q1 2027</strong>"
 features:
-  - id: live-trading
+  - id: ibkr
     hero: true
-    title: "Live Trading via Alpaca — v1.0"
-    category: "Trading · Execution · Milestone"
+    title: "IBKR Connection"
+    category: "Trading · Integrations"
+    icon: filing
+    status: planned
+    statusLabel: "Planned"
+    etaLabel: TARGET
+    eta: "Q1 2027"
+    description: >-
+      The second broker. Interactive Brokers support brings Ampliterm to users who already trade on IBKR — and proves out the promise the engine was built around: the broker layer is a swappable seam. Adding IBKR means a new broker gateway and credentials, not an engine rewrite. Same principle as Alpaca: <strong>your broker is both the data source and the execution venue</strong>, so IBKR users run on IBKR data.
+    bullets:
+      - "<strong>IBKR execution</strong> — deploy the same strategies against an Interactive Brokers account."
+      - "<strong>IBKR market data</strong> — your IBKR data entitlements power the engine, mirroring the Alpaca model."
+      - "<strong>Engine untouched</strong> — strategies, backtests, the screener, and the ledger all carry over unchanged."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Broker
+        value: "Interactive Brokers"
+      - label: Pre-reqs
+        value: "v1.0 GA"
+
+  - id: live-trade-watch
+    title: "Live Trade Watch"
+    category: "Trading · Monitoring"
     icon: trade
     status: planned
     statusLabel: "Planned"
     etaLabel: TARGET
     eta: "Q1 2027"
     description: >-
-      The v1.0 milestone. Users will be able to place trades directly from within Ampliterm through an Alpaca brokerage connection — without leaving the research terminal or the chart they've been studying. Every order is linked to the journal entry and strategy that justified it, creating a complete, auditable chain from thesis to execution. Strategy alerts go from notifications to actionable — when a setup triggers, you can act on it in the same screen.
+      The real-time sibling of the strategy debugger: a per-position monitoring view showing exactly where every armed strategy and open position stands right now — which confirmations are pending, how far price sits from the stop, what the engine will do next — with manual intervention controls for when you want to step in ahead of the logic.
     bullets:
-      - "<strong>Alpaca broker integration</strong> — connect your Alpaca account via OAuth. Market, limit, and stop orders supported at launch."
-      - "<strong>Order ticket from the chart</strong> — open an order ticket directly from any stock page without navigating away."
-      - "<strong>Journal linkage</strong> — every trade automatically links back to the journal entry and strategy that preceded it."
-      - "<strong>Strategy-triggered alerts with order flow</strong> — when a strategy setup fires, the alert includes a one-click path to the order ticket."
-      - "<strong>Position tracking</strong> — open positions reflected on the chart and dashboard in real time."
+      - "<strong>Armed-setup monitor</strong> — every pending arm with its confirmation checklist and window countdowns, live."
+      - "<strong>Position watch</strong> — open positions with distance-to-stop and distance-to-target as the market moves."
+      - "<strong>Manual intervention</strong> — close or reduce a position from the watch view, recorded in the ledger alongside engine actions."
     meta:
       - label: Lead
         value: "@danpastori"
-      - label: Broker
-        value: "Alpaca Markets"
-        color: green
-      - label: Milestone
-        value: v1.0 GA
-        color: green
       - label: Pre-reqs
-        value: "Strategies · Dashboard"
+        value: "v1.0 · WebSocket feed"
 
-  - id: algorithmic-trading
-    title: "Algorithmic Trading"
-    category: "Automation · Strategy"
-    icon: robot
+  - id: scale-in-pyramiding
+    title: "Scale-In & Pyramiding"
+    category: "Strategy · Position Management"
+    icon: lightning
     status: planned
     statusLabel: "Planned"
     etaLabel: TARGET
     eta: "Q2 2027"
     description: >-
-      The logical extension of Strategies. Once a strategy is defined and live trading is connected, you can instruct the system to execute trades automatically when setup conditions are met — with hard limits on position size, account exposure, and maximum concurrent positions. The system trades the strategy; you review the log.
+      Strategies that build positions in stages instead of all at once — add on strength, trim into targets. The engine's position model is already leg-aware under the hood; this exposes scale-up and scale-down as first-class strategy actions in the builder.
     bullets:
-      - "<strong>Strategy automation rules</strong> — enable any saved strategy for automated execution with a defined position size."
-      - "<strong>Risk guardrails</strong> — set a maximum number of concurrent automated positions and a maximum percentage of account value that can be in automated trades at once."
-      - "<strong>Execution log</strong> — every automated trade logged with the exact signal conditions that triggered it, fully auditable."
-      - "<strong>Kill switch</strong> — pause or stop all automated trading instantly from any screen."
+      - "<strong>Scale-up actions</strong> — add to a winner when a second setup confirms."
+      - "<strong>Scale-down actions</strong> — take partial profits at defined levels while the rest runs."
+      - "<strong>Leg-aware ledger</strong> — every add and trim recorded as its own leg with its own fill."
     meta:
       - label: Lead
         value: "@danpastori"
       - label: Pre-reqs
-        value: "Live trading · Strategies"
-        color: amber
+        value: "v1.0 GA"
 
-  - id: edgar-ibkr
-    title: "EDGAR Filings + IBKR Connection"
-    category: "Data · Integrations"
-    icon: filing
+  - id: whole-market-screener
+    title: "Whole-Market Screening"
+    category: "Screener · Scale"
+    icon: globe
     status: planned
     statusLabel: "Planned"
     etaLabel: TARGET
     eta: "Q2 2027"
     description: >-
-      Two data integrations that push Ampliterm deeper into institutional-grade research. SEC EDGAR pulls are indexed locally so you can search across filings for any company in your watchlist. The Interactive Brokers connection brings a second broker option for users who already trade on IBKR.
+      Today the nightly screener sweeps your watchlist and deployed tickers. This expands the universe to the entire market — thousands of symbols against your strategies every night — so the screener finds setups on names you've never looked at. Gated on a bulk end-of-day data ingestion mode; the screener itself was built with this swap in mind.
     bullets:
-      - "<strong>EDGAR public filing ingestion</strong> — automatically pull and index 8-K, 10-Q, 10-K, 13-F, and S-1 filings for any watchlist symbol."
-      - "<strong>Full-text search across filings</strong> — search across all indexed filings by ticker, keyword, or date range."
-      - "<strong>Filing alerts</strong> — notify when a new filing drops for any watchlist symbol."
-      - "<strong>Interactive Brokers (IBKR) connection</strong> — second broker integration for live trading and position sync."
+      - "<strong>All-tickers universe</strong> — screen every listed symbol, not just your watchlist."
+      - "<strong>Per-user scope setting</strong> — choose \"screen my watchlist\" or \"screen everything\" per strategy."
+      - "<strong>Bulk EOD ingestion</strong> — a daily-bar sync mode sized for thousands of symbols."
     meta:
       - label: Lead
         value: "@danpastori"
-      - label: Sources
-        value: "SEC EDGAR · IBKR TWS"
       - label: Pre-reqs
-        value: "Live trading"
+        value: "EOD data pipeline"

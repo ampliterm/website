@@ -5,7 +5,7 @@ defineProps<{
     title: string
     excerpt: string
     date: string
-    author: { name: string; initials: string; role: string }
+    author?: { name: string; initials: string; role: string } | null
     tags: Array<{ label: string; variant: 'cyan' | 'green' | 'amber' | 'red' | 'neutral' }>
     imagePlaceholder?: string
   }
@@ -72,10 +72,10 @@ const formatDate = (d: string) =>
       <p class="excerpt">{{ post.excerpt }}</p>
       <div class="fc-meta">
         <div class="fc-author">
-          <div class="author-avatar">{{ post.author.initials }}</div>
+          <div class="author-avatar">{{ post.author?.initials ?? 'AT' }}</div>
           <div>
-            <div class="author-name">{{ post.author.name }}</div>
-            <div class="author-role">{{ post.author.role }}</div>
+            <div class="author-name">{{ post.author?.name ?? 'Ampliterm' }}</div>
+            <div class="author-role">{{ post.author?.role ?? '' }}</div>
           </div>
         </div>
         <NuxtLink :to="post.path" class="read-link">Read article →</NuxtLink>

@@ -51,7 +51,7 @@ interface Milestone {
     title: string
     category: string
     icon: string
-    status: 'dev' | 'review' | 'beta' | 'planned' | 'research'
+    status: 'done' | 'dev' | 'review' | 'beta' | 'planned' | 'research'
     statusLabel: string
     eta?: string
     etaLabel?: string

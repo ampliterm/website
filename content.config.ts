@@ -25,7 +25,7 @@ const roadmapFeature = z.object({
   title: z.string(),
   category: z.string(),
   icon: z.string().default('default'),
-  status: z.enum(['dev', 'review', 'beta', 'planned', 'research']),
+  status: z.enum(['done', 'dev', 'review', 'beta', 'planned', 'research']),
   statusLabel: z.string(),
   eta: z.string().optional(),
   etaLabel: z.string().optional(),
@@ -67,29 +67,34 @@ export default defineContentConfig({
       schema: z.object({
         excerpt: z.string().default(''),
         date: z.string(),
-        author: blogAuthor,
+        author: blogAuthor.nullable().default(null),
         tags: z.array(blogTag).default([]),
         category: z.string().default(''),
         readTime: z.string().default(''),
         featured: z.boolean().default(false),
         imagePlaceholder: z.string().optional(),
+        // Path under public/ to a static OG image (e.g. "/og/blog-sec-filings-og.png").
+        // When set, it overrides the default dynamic nuxt-og-image template.
+        ogImage: z.string().optional(),
       }),
     }),
     content: defineCollection({
       type: 'page',
       source: '**',
     }),
-    // docs: defineCollection({
-    //   type: 'page',
-    //   source: 'docs/**',
-    //   schema: z.object({
-    //     section: z.string().default(''),
-    //     sectionOrder: z.number().default(0),
-    //     order: z.number().default(0),
-    //     badge: z.string().optional(),
-    //     updatedAt: z.string().optional(),
-    //   }),
-    // }),
+    docs: defineCollection({
+      type: 'page',
+      source: 'docs/**',
+      schema: z.object({
+        section: z.string().default(''),
+        sectionOrder: z.number().default(0),
+        order: z.number().default(0),
+        badge: z.string().optional(),
+        updatedAt: z.string().optional(),
+        // Path under public/ to a static OG image; defaults to the shared docs card.
+        ogImage: z.string().optional(),
+      }),
+    }),
     changelog: defineCollection({
       type: 'data',
       source: 'changelog/*.yml',

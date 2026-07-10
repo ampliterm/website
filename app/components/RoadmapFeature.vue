@@ -11,7 +11,7 @@ interface Feature {
   title: string
   category: string
   icon: string
-  status: 'dev' | 'review' | 'beta' | 'planned' | 'research'
+  status: 'done' | 'dev' | 'review' | 'beta' | 'planned' | 'research'
   statusLabel: string
   eta?: string
   etaLabel?: string
@@ -148,12 +148,14 @@ defineProps<{ feature: Feature }>()
   flex-shrink: 0;
 }
 
+.feat-status.done   { color: var(--green);   border-color: var(--green);   background: var(--green-dim); opacity: 0.7; }
 .feat-status.dev    { color: var(--green);   border-color: var(--green);   background: var(--green-dim); }
 .feat-status.review { color: var(--cyan);    border-color: var(--cyan);    background: var(--cyan-dim); }
 .feat-status.beta   { color: var(--magenta); border-color: var(--magenta); background: var(--magenta-dim); }
 .feat-status.planned  { color: var(--text-1); border-color: var(--border-2); background: var(--bg-3); }
 .feat-status.research { color: var(--amber);  border-color: var(--amber);   background: var(--amber-dim); }
 
+.feat-status.done .pulse-dot   { background: var(--green); }
 .feat-status.dev .pulse-dot    { background: var(--green);   box-shadow: 0 0 6px var(--green); animation: pulse 2s infinite; }
 .feat-status.review .pulse-dot { background: var(--cyan); }
 .feat-status.beta .pulse-dot   { background: var(--magenta); }

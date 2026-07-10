@@ -1,87 +1,112 @@
 id: now
 order: 1
 label: "Now"
-quarter: "Q2 2026"
+quarter: "Q3 2026"
 tag: now
 tagLabel: "SHIPPING"
-dateRange: "May — Jul 2026"
+dateRange: "Jun — Sep 2026"
 codename: eos
-intro: "Three tracks running in parallel. The <strong>Alpha Snip browser extension</strong> is the flagship — it brings Cortex AI into your research workflow so every article, filing, or tweet you read can be captured, scored, and linked to a stock. Alongside it, the technical indicator library expands significantly, and the super admin / onboarding experience gets the polish it deserves."
+intro: "The engine quarter. <strong>Strategies, the screener, automated paper trading, and Cortex are all shipped</strong> — the full loop from building logic to watching it trade paper is live today. The one track left before v1.0 is the one we refuse to rush: <strong>live trading is code-complete and in validation on a real funded account</strong> right now."
 progress:
-  label: "Milestone progress · in active development"
-  percent: 22
+  label: "Milestone progress · live validation underway"
+  percent: 85
   color: green
   stats:
-    - "<strong>22%</strong> done"
-    - "<strong>3</strong> in dev"
-    - "<strong>0</strong> in review"
-    - "target release <strong>Jun–Jul '26</strong>"
+    - "<strong>3</strong> shipped"
+    - "<strong>1</strong> in validation"
+    - "<strong>85%</strong> to v1.0"
+    - "target <strong>Q3 '26</strong>"
 features:
-  - id: alpha-snip
+  - id: live-trading-validation
     hero: true
-    title: "Alpha Snip — Browser Extension"
-    category: "AI · Research · Capture"
+    title: "Live Trading on Alpaca — v1.0"
+    category: "Trading · Execution · Milestone"
+    icon: trade
+    status: beta
+    statusLabel: "In validation"
+    etaLabel: TARGET
+    eta: "Q3 2026"
+    description: >-
+      The v1.0 milestone, and it's no longer a plan — it's code-complete and being validated on a real, funded Alpaca account right now. Live mode runs the <strong>identical engine and order path</strong> that paper trading has been exercising for months: the only thing that changes is where the order lands. What stands between here and GA is deliberate: a validation checklist run against real money, because an automated trading engine earns trust operationally, not in a demo.
+    bullets:
+      - "<strong>Same engine as paper</strong> — going live swaps the order destination and nothing else. Everything validated on Local Paper and Alpaca Paper holds."
+      - "<strong>Two-key safety gate</strong> — Live must be selected as the execution mode <em>and</em> a server-level master switch enabled. Real money requires deliberately turning both."
+      - "<strong>Broker-resting protective stops</strong> — a real GTC stop order rests at the broker from entry, protecting positions even between engine runs."
+      - "<strong>Portfolio risk governor</strong> — max positions, notional caps, and a daily-loss kill switch enforced before any order is placed."
+      - "<strong>Idempotent, audited orders</strong> — deterministic order IDs mean retries can't double-place; every placement, fill, and rejection is audit-logged."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Broker
+        value: "Alpaca Markets"
+        color: green
+      - label: Milestone
+        value: v1.0 GA
+        color: green
+      - label: Status
+        value: "Validating on a funded account"
+        color: amber
+
+  - id: strategies-screener
+    title: "Strategy Builder & EOD Screener"
+    category: "Strategy · Screener · Alerts"
+    icon: lightning
+    status: done
+    statusLabel: "Done"
+    etaLabel: SHIPPED
+    eta: "Jun 2026"
+    description: >-
+      Shipped, and deeper than originally scoped. Strategies are built as an explicit <strong>trigger → confirmation tree</strong> — ALL/AND logic with per-condition timing windows — plus invalidation guards, exit logic, risk rules, position sizing, and an optional AI confirmation gate. A 15-condition catalog covers trend, momentum, volatility, volume, and candlestick patterns. Every weekday close, the screener replays your enabled strategies across your watchlist and tiers the results.
+    bullets:
+      - "<strong>Strategy Builder</strong> — nested ALL/ANY confirmation trees with timing windows, bail-out guards, exits, stop/target/trailing/time risk rules, and sizing."
+      - "<strong>15-condition catalog</strong> — MA and MACD crossovers, RSI, stochastic, Bollinger touch and squeeze, Donchian and ATR breakouts, VWAP cross, relative volume, volume spike, hammer, shooting star, engulfing, trend state."
+      - "<strong>Nightly EOD screener</strong> — TRIGGERED / ALERT / WARNING tiers with streak tracking, expandable condition checklists, and email digests."
+      - "<strong>Backtesting on the same engine</strong> — attach strategies to a simulation and inspect every trade and every trigger that didn't survive confirmation."
+      - "<strong>Strategy debugger</strong> — a per-candle arm → confirm → enter timeline for any strategy over any stretch of history."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Shipped
+        value: "v0.15.0 – v0.16.0"
+
+  - id: paper-trading
+    title: "Automated Paper Trading"
+    category: "Trading · Execution"
+    icon: robot
+    status: done
+    statusLabel: "Done"
+    etaLabel: SHIPPED
+    eta: "Jun 2026"
+    description: >-
+      Deploy a strategy onto a ticker and the engine trades it — evaluating closed candles every few minutes, entering and exiting positions, and writing every trade to a unified ledger. Two paper modes ship: <strong>Local Paper</strong> (instant simulated fills against a persistent, seeded paper account on your own instance) and <strong>Alpaca Paper</strong> (real orders on Alpaca's paper environment — the same order path live trading uses).
+    bullets:
+      - "<strong>Deployments</strong> — strategies are reusable templates; deploying one to a ticker (active / paused / retired) is what trades."
+      - "<strong>Local paper account</strong> — seeded balance, cash and equity derived from actual fill history, reseedable for a clean slate."
+      - "<strong>Per-strategy sizing</strong> — all-in, percent of equity, fixed notional, or fixed shares, fractional supported."
+      - "<strong>Engine-written trade ledger</strong> — open positions and closed history you never type into, attributed to the deployment that produced them."
+    meta:
+      - label: Lead
+        value: "@danpastori"
+      - label: Shipped
+        value: "v0.17.0"
+
+  - id: cortex-assistant
+    title: "Cortex AI Assistant"
+    category: "AI · Research · Analysis"
     icon: browser
-    status: dev
-    statusLabel: "In dev"
-    etaLabel: TARGET
-    eta: "Jun 2026"
-    description: >-
-      Research happens in browser tabs. Alpha Snip is a Chrome/Firefox/Safari extension that lets you clip any piece of content — an article, a filing excerpt, a social post, an earnings note — and bring it directly into Ampliterm. Cortex AI processes each clip automatically: stock tickers are extracted and linked, sentiment is scored, and an <strong>alpha score (0–10)</strong> is generated to rank the signal quality of the piece. Everything lands in your Intel Feed, organized by symbol.
-    bullets:
-      - "<strong>One-click capture</strong> — highlight text or the whole page and send it to Ampliterm with a single click."
-      - "<strong>Cortex ticker extraction</strong> — any company name or symbol mentioned in the clip is automatically identified and linked to the matching stock in your watchlist."
-      - "<strong>Sentiment analysis</strong> — Cortex scores the clip bullish, neutral, or bearish at both the document and per-ticker level."
-      - "<strong>Alpha score</strong> — a composite 0–10 signal quality score based on source credibility, specificity, and sentiment strength."
-      - "<strong>Intel Feed</strong> — a per-symbol feed of all captured clips, sorted by recency and alpha score, visible on every stock page."
-    meta:
-      - label: Lead
-        value: "@danpastori"
-      - label: Platforms
-        value: "Chrome · Firefox · Safari"
-      - label: AI
-        value: "Cortex via Laravel MCP"
-        color: cyan
-
-  - id: extended-technicals
-    title: "Extended Technical Indicators"
-    category: "Analysis · Charting"
-    icon: indicators
-    status: dev
-    statusLabel: "In dev"
-    etaLabel: TARGET
-    eta: "Jun 2026"
-    description: >-
-      Six new technical signals join the existing EMA, SMA, and MACD suite. These indicators feed directly into the upcoming Strategies feature — every technical you add here becomes a building block for automated setup detection and screener filtering.
-    bullets:
-      - "<strong>Doji / Hammer</strong> — candlestick reversal pattern detection with configurable body-to-wick ratio threshold."
-      - "<strong>Moving Average Touch</strong> — flags when price tags a key MA level without breaking through, a common entry trigger."
-      - "<strong>Bollinger Band Touch</strong> — detects upper and lower band touches with squeeze context."
-      - "<strong>RSI Overbought / Oversold</strong> — configurable thresholds with divergence detection."
-      - "<strong>MACD Crossover</strong> — signal line cross events flagged on chart and available as a strategy trigger."
-      - "<strong>RVOL (Relative Volume)</strong> — compares current volume to the N-day average; highlights unusual activity."
-    meta:
-      - label: Lead
-        value: "@danpastori"
-      - label: Pre-reqs
-        value: "v0.13.0 charts"
-
-  - id: super-admin-onboarding
-    title: "Super Admin & Onboarding Polish"
-    category: "Admin · Security"
-    icon: shield
-    status: planned
-    statusLabel: "Planned"
-    etaLabel: TARGET
+    status: done
+    statusLabel: "Done"
+    etaLabel: SHIPPED
     eta: "Jul 2026"
     description: >-
-      The self-hosted setup experience gets a proper first-run flow. New user registration is cleaned up end-to-end, a guided onboarding screen walks users through connecting their first watchlist and writing their first journal entry, and two-factor authentication ships as an option for both admins and users.
+      The proof of concept from v0.11 is now a full conversational analyst on every page (⌘J). Cortex evaluates indicators with the engine's own math, reads your open trades, deployments, and journal for context, sees the chart you're viewing, and critiques strategy drafts while you build them. Every response is analysis — never advice, enforced by the app itself.
     bullets:
-      - "<strong>User registration cleanup</strong> — super admin can invite, approve, or restrict new accounts from a single panel."
-      - "<strong>Onboarding screen</strong> — guided setup wizard for new users: add a ticker, set up the chart, write an entry."
-      - "<strong>Two-factor authentication</strong> — TOTP (Google Authenticator, 1Password, etc.) supported for all accounts. Enforceable by super admin."
+      - "<strong>Deterministic tool core</strong> — indicator evaluations computed by the same code the engine trades on; the model interprets, it doesn't invent."
+      - "<strong>Your-data awareness</strong> — open trades, deployments, and journal search, scoped server-side to your account."
+      - "<strong>Strategy-draft critique</strong> — reviews the unsaved strategy on your builder screen in the catalog's own vocabulary."
+      - "<strong>Bring your own key</strong> — OpenAI or Anthropic, configured on your instance; you control the spend."
     meta:
       - label: Lead
         value: "@danpastori"
-      - label: 2FA standard
-        value: TOTP (RFC 6238)
+      - label: Shipped
+        value: "v0.19.0"

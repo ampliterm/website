@@ -1,0 +1,35 @@
+version: "0.16.0"
+title: "The Screener"
+type: minor
+date: "2026-06-12"
+codename: argus
+intro: "A hundred eyes on the close. The nightly EOD screener ships complete — your strategies replayed against every close, tiered into triggered / alert / warning with streak tracking and email digests. Strategies become ticker-less templates you deploy onto symbols, the live engine gets hardened end to end, and seven new signals join the catalog."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>EOD Strategy Screener</strong> — every weekday evening, screener-enabled strategies sweep your watchlist and tier the results: TRIGGERED, ALERT, or WARNING, with NEW/DAY-N streaks, expandable condition checklists, and per-user email digests with built-in noise control."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Strategy deployments</strong> — strategies are now reusable templates; deploying one onto a ticker (active / paused / retired) is what trades. Every position and order attributes to its deployment."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Attach strategies to backtests</strong> — simulations now run your saved strategies directly; signals become a display overlay."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Seven new signals</strong> — Donchian channel breakout, VWAP cross, ATR volatility breakout, volume spike, shooting star, stochastic %K/%D, and the TTM volatility squeeze."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Strategy templates</strong> — one-click starting points, beginning with Consolidation Breakout (the Cup &amp; Handle recipe, built from catalog conditions)."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Backtest deep-links from screener hits</strong> — one click from \"it triggered last night\" to a pre-filled simulation."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Live-engine hardening, phases A–G</strong> — engine identity, crash recovery, session lifecycle, protective stops, split handling, and the portfolio risk governor all hardened ahead of real-money trading."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Signals hardening</strong> — a registry-driven conformance test harness now enforces the signal contract for every signal, with calibrated strength and prediction confidence."
+        author: "@danpastori"

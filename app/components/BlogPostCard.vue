@@ -5,12 +5,13 @@ defineProps<{
     title: string
     excerpt: string
     date: string
-    author: { name: string }
+    author?: { name: string } | null
     tags: Array<{ label: string; variant: 'cyan' | 'green' | 'amber' | 'red' | 'neutral' }>
     readTime: string
     imagePlaceholder?: string
   }
 }>()
+
 
 const formatDate = (d: string) =>
   new Date(d + 'T00:00:00').toLocaleDateString('en-US', {
@@ -36,7 +37,7 @@ const formatDate = (d: string) =>
       <div class="post-card-title">{{ post.title }}</div>
       <p class="post-card-excerpt">{{ post.excerpt }}</p>
       <div class="post-card-footer">
-        <div class="pf-author">By <span>{{ post.author.name }}</span></div>
+        <div class="pf-author">By <span>{{ post.author?.name ?? 'Ampliterm' }}</span></div>
         <div class="pf-right">
           <div class="pf-date">{{ formatDate(post.date) }}</div>
           <div class="pf-read">{{ post.readTime }}</div>

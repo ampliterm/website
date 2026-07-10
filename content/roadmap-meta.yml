@@ -1,78 +1,78 @@
-eyebrow: "What's next · Q2 2026 → 2027"
-intro: "Where Ampliterm is going. We publish our roadmap because <strong>traders deserve to know what they're building their research practice on</strong> — not just what shipped last week. Below is every milestone we're committed to, what it unlocks, and an honest estimate of when. The destination is <strong>v1.0 with live trading on Alpaca</strong>. Everything between here and there sharpens the tools that will make it worth using."
-liveBuild: "v0.13.0 — Tyche"
-inFlight: "v0.14.0 — Alpha Snip"
+eyebrow: "What's next · Q3 2026 → 2027"
+intro: "Where Ampliterm is going. We publish our roadmap because <strong>traders deserve to know what they're building their research practice on</strong> — not just what shipped last week. Below is every milestone we're committed to, what it unlocks, and an honest estimate of when. The destination is <strong>v1.0 with live trading on Alpaca</strong> — code-complete today and in validation on a real funded account. Everything after it widens who can use the engine and what it can see."
+liveBuild: "v0.19.0 — Mnemosyne"
+inFlight: "v1.0 — Live validation"
 inFlightColor: cy
 target: "Q3 2026"
 featuresQueued: 11
-disclaimer: "Dates are <strong>non-binding targets</strong>. We trade scope before we slip dates — if a feature isn't ready, it gets cut from its milestone and rescheduled, not shipped half-done. Anything past Q4 2026 reflects current intent, not a commitment."
+disclaimer: "Dates are <strong>non-binding targets</strong>. We trade scope before we slip dates — if a feature isn't ready, it gets cut from its milestone and rescheduled, not shipped half-done. Anything past Q1 2027 reflects current intent, not a commitment."
 githubUrl: "#"
 discordUrl: "#"
 timeline:
-  label: "Forward calendar · May '26 — Q2 '27"
+  label: "Calendar · May '26 — Q2 '27"
   months:
     - name: May
-      now: true
-      nowLinePercent: 45
       markers:
-        - label: "alpha snip · dev"
+        - label: "alpha snip · shipped"
           type: commit
           top: 30
-        - label: "technicals"
+        - label: "edgar · shipped"
           type: commit
           top: 55
     - name: Jun
       markers:
-        - label: "alpha snip · release"
+        - label: "engine + screener · shipped"
           type: commit
           top: 30
+        - label: "paper trading · shipped"
+          type: commit
+          top: 55
     - name: Jul
+      now: true
+      nowLinePercent: 30
       markers:
-        - label: "super admin / 2fa"
+        - label: "cortex · shipped"
           type: commit
           top: 30
-        - label: "strategies · dev"
+        - label: "live validation · underway"
           type: next
           top: 55
     - name: Aug
       markers:
-        - label: "ios · beta"
+        - label: "real-money gate checklist"
           type: next
           top: 30
     - name: Sep
       markers:
-        - label: "strategies · release"
-          type: next
+        - label: "v1.0 · live trading"
+          type: exp
           top: 30
-        - label: "screener live"
-          type: next
-          top: 55
     - name: Oct
       markers:
-        - label: "dashboard"
+        - label: "websocket feed"
           type: next
           top: 30
     - name: Nov
       markers:
-        - label: "ios · release"
-          type: exp
+        - label: "fundamental conditions · 2fa"
+          type: next
           top: 30
     - name: Dec
       markers:
-        - label: "alpaca · integration"
-          type: exp
+        - label: "dashboard"
+          type: next
           top: 30
     - name: Q1 '27
       markers:
-        - label: "v1.0 · live trading"
+        - label: "ibkr · integration"
           type: exp
           top: 30
-        - label: "edgar + ibkr"
+        - label: "ios · beta"
           type: exp
           top: 55
     - name: Q2 '27
       markers:
-        - label: "algo trading"
+        - label: "scale-in · whole-market"
           type: research
           top: 30
         - label: "goal setting"

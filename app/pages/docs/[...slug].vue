@@ -21,10 +21,12 @@ useHead({
   title: computed(() => `${page.value?.title ?? 'Docs'} — Ampliterm`),
 })
 
-defineOgImage('Ampliterm', {
-  eyebrow: 'DOCS',
-  title: page.value?.title ?? 'Documentation',
-  description: page.value?.description,
+// Docs share the designed static OG card; a page can override it with an
+// `ogImage` frontmatter path (rendered at 2x by `npm run og:generate`).
+useSeoMeta({
+  ogImage: `https://ampliterm.com${page.value?.ogImage ?? '/og/docs-og.png'}`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 
 const eyebrowClass = computed(() => {

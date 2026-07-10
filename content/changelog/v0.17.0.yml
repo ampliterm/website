@@ -1,0 +1,35 @@
+version: "0.17.0"
+title: "Paper Trading"
+type: minor
+date: "2026-06-28"
+codename: plutus
+intro: "The engine starts placing real orders. Three execution modes ship — Local Paper, Alpaca Paper, and a flag-locked Live mode — all running the identical order path, so what you validate on paper holds when you move up. A persistent local paper account with a seeded balance, per-strategy position sizing, user-configurable risk controls, and an AI confirmation gate round out the release."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Execution modes</strong> — Local Paper (instant simulated fills on your instance), Alpaca Paper (real orders on Alpaca's paper environment), and Live (real money, locked behind a deliberate master switch). One engine, one order path, three destinations."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Real broker order path</strong> — sized market orders with deterministic client-order IDs (a retry can never double-place), polling to resolution, and broker-resting GTC protective stops placed at entry from the actual fill price."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Local paper account</strong> — a persistent, seeded paper balance with cash and equity derived from your actual fill history. Reseed anytime from Settings for a clean slate."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Per-strategy position sizing</strong> — all-in, percent of equity, fixed notional, or fixed shares, with fractional-share support."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>AI confirmation gate</strong> — an optional per-strategy pre-entry check: an AI agent scores the setup 0–100 and vetoes entries below your threshold. Off by default; backtests make no AI calls."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Strategy debugger</strong> — replay a strategy over history and inspect a per-candle arm → confirm → enter timeline, including the entries that never happened and why."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Risk governor moved into your settings</strong> — max open positions, per-symbol and total notional caps, and the daily-loss kill switch are now user-configurable under Settings → System."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Trade history unified</strong> — the manual trade model retired; the Trades page is now the engine-written ledger, with execution-mode tracking on every row."
+        author: "@danpastori"

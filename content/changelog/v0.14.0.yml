@@ -1,0 +1,27 @@
+version: "0.14.0"
+title: "Capture"
+type: minor
+date: "2026-05-25"
+codename: artemis
+intro: "Research gets an inbox. The Intel feed lands — clips, notes, files, and transcripts, all tied to tickers — alongside Alpha Snip, the browser extension that clips content into your instance from wherever you're reading. EDGAR fundamentals go from raw filings to charted financials, and the journal gains its first AI analysis pass."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Intel feed</strong> — capture clips, notes, file uploads, and transcripts (earnings calls, conference calls, podcasts) into one searchable research feed, linked to the tickers they're about."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Alpha Snip browser extension</strong> — clip any article or excerpt straight into your Intel feed from the browser, authenticated with a personal API token."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>API tokens</strong> — create and revoke personal access tokens under Settings for connecting the extension and other clients."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Fundamentals view</strong> — SEC XBRL financials standardized into income statement, balance sheet, and cash-flow metrics, with financial-statement tables and trend charts per ticker."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Filings on every ticker page</strong> — 10-Ks, 10-Qs, 8-Ks and more indexed from EDGAR with type badges and links to the source documents."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>AI analysis for journal entries and intel items</strong> — summaries, key bullets, and sentiment reads generated per item when AI is configured."
+        author: "@danpastori"

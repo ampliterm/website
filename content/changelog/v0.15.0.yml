@@ -1,0 +1,32 @@
+version: "0.15.0"
+title: "The Engine"
+type: minor
+date: "2026-06-08"
+codename: atlas
+intro: "The biggest release in Ampliterm's history. The simulation engine was rebuilt from the ground up into a single trading kernel — pure functions over candles, streaming indicators, and a windowed trigger → confirmation strategy model — so the exact same code runs a backtest and a live session. On top of it: the visual Strategy Builder. Underneath it: Alpaca becomes the sole market-data source."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Strategy Builder</strong> — compose trading logic visually: one trigger, a nested ALL/ANY confirmation tree with per-condition timing windows, optional exit logic, and risk rules (stop-loss, take-profit, trailing stop, time stop)."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>The trading kernel</strong> — one per-candle engine loop shared by backtests and live trading. Closed candles only, no look-ahead, state that survives restarts."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Streaming indicators</strong> — EMA, SMA, RSI, MACD, RVOL, ATR, Bollinger Bands, and VWAP computed incrementally per candle, with batch parity enforced by tests."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Strategy trade ledger</strong> — every position the engine opens or closes is recorded automatically, attributed to its strategy."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>Alpaca is now the sole market-data source</strong> — Massive and AlphaVantage removed. Your broker's data is the data your strategies evaluate against."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Ticker metadata migrated to sec.gov</strong> — company info now comes from the SEC's own dataset."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Laravel Horizon</strong> — queue monitoring and management for the growing background workload (price syncs, EDGAR, analysis jobs)."
+        author: "@danpastori"

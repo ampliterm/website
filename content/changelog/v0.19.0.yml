@@ -1,0 +1,32 @@
+version: "0.19.0"
+title: "The Analyst"
+type: minor
+date: "2026-07-07"
+codename: mnemosyne
+intro: "Cortex grows up. What shipped as a proof of concept in v0.11 is now a full conversational analyst on every page: it evaluates indicators with the engine's own math, reads your open trades and journal for context, sees the chart you're looking at, and critiques strategy drafts while you build them. Plus a VWAP standardization pass and a full audit of every indicator against its industry-standard definition."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Cortex assistant</strong> — open with ⌘J on any page. Streaming conversations that persist, resume, and live in a history page. Every response carries an ANALYSIS · NOT ADVICE note rendered by the app itself."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Indicator evaluation tools</strong> — Cortex wields deterministic tools for ATR, Bollinger Bands, EMA and MACD crossovers, RSI, relative volume, VWAP, and engulfing candles. The math comes from the engine; the model interprets."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Your-data awareness</strong> — Cortex can read your open trades, strategy deployments, and journal entries — scoped server-side to your account, never anyone else's."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Strategy-draft critique</strong> — ask Cortex to review the unsaved strategy on your builder screen. It suggests only conditions that exist in the catalog and is forbidden from making profitability claims."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Chart context</strong> — on ticker pages, Cortex knows the symbol and timeframe you're viewing and can capture the chart as an image to reason about."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>VWAP standardized</strong> — anchored VWAP (session, week, month, year) everywhere; the window-dependent cumulative anchor removed; degenerate anchor × timeframe combinations rejected at save time."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Indicator standards audit</strong> — every indicator verified against its industry-standard definition, with deliberate convention choices documented."
+        author: "@danpastori"

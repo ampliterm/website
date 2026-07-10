@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "og:generate": "node scripts/generate-og.mjs",
     "preview": "nuxt preview",
     "prepare": "npx skilld prepare || true"
   },

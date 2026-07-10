@@ -164,6 +164,23 @@ All "Alpha Journal" references in designs = **Ampliterm**.
 
 ---
 
+## OG Images (social share cards)
+
+**When asked to create an OG image for any page or blog post, read
+`design/og/README.md` first and follow it exactly.** Short version: author a
+1200×630 plain SVG in `design/og/` (JetBrains Mono only, weights 400/600/700,
+absolute positioning, the shared shell — topbar, corner crosshairs, footer pills),
+run `npm run og:generate` (renders 2x retina PNGs to `public/og/` via
+@resvg/resvg-js with bundled fonts), **view the generated PNG to check for
+overlaps**, then wire it: `ogImage: "/og/<name>-og.png"` frontmatter on blog/docs
+pages, or `useSeoMeta` on standalone pages. Blog posts without an `ogImage` fall
+back to the dynamic template (`app/components/OgImage/Ampliterm.takumi.vue`);
+docs pages without one default to `/og/docs-og.png`. Existing SVGs in `design/og/`
+are the reference examples — `blog.svg` is the simplest shell, `home.svg` and
+`blog-sec-filings.svg` show data panels.
+
+---
+
 ## Component Reference
 
 ### Navigation

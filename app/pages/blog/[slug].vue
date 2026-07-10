@@ -76,11 +76,21 @@ useHead({
   ],
 })
 
-defineOgImage('Ampliterm', {
-  eyebrow: (page.value?.category as string | undefined)?.toUpperCase() ?? 'BLOG',
-  title: page.value?.title ?? 'Article',
-  description: page.value?.excerpt,
-})
+// A post can ship a designed static OG image (frontmatter `ogImage`, rendered at 2x
+// by `npm run og:generate`); otherwise fall back to the dynamic Ampliterm template.
+if (page.value?.ogImage) {
+  useSeoMeta({
+    ogImage: `https://ampliterm.com${page.value.ogImage}`,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+  })
+} else {
+  defineOgImage('Ampliterm', {
+    eyebrow: (page.value?.category as string | undefined)?.toUpperCase() ?? 'BLOG',
+    title: page.value?.title ?? 'Article',
+    description: page.value?.excerpt,
+  })
+}
 </script>
 
 <template>

@@ -5,8 +5,10 @@ const emit = defineEmits<{ close: [] }>()
 const name = ref('')
 const email = ref('')
 
+const { status, errorMessage, subscribe } = useKitSubscribe()
+
 function handleSubmit() {
-  // wiring up later
+  subscribe(email.value.trim(), name.value.trim())
 }
 
 function handleBackdrop(e: MouseEvent) {
@@ -43,8 +45,14 @@ onMounted(() => {
             Be first in line when Ampliterm launches. We'll notify you with early access pricing and release details.
           </p>
 
+          <!-- success -->
+          <div v-if="status === 'success'" class="modal-success">
+            <span class="success-label">Success</span>
+            <p class="success-text">You're on the list. Check your email to confirm your subscription.</p>
+          </div>
+
           <!-- form -->
-          <form class="modal-form" @submit.prevent="handleSubmit">
+          <form v-else class="modal-form" @submit.prevent="handleSubmit">
             <div class="field">
               <label class="field-label" for="wl-name">Name</label>
               <input
@@ -71,12 +79,14 @@ onMounted(() => {
               >
             </div>
 
-            <button type="submit" class="submit-btn">
-              Request early access
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <button type="submit" class="submit-btn" :disabled="status === 'submitting'">
+              {{ status === 'submitting' ? 'Submitting…' : 'Request early access' }}
+              <svg v-if="status !== 'submitting'" width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
               </svg>
             </button>
+
+            <p v-if="status === 'error'" class="form-error">{{ errorMessage }}</p>
           </form>
 
           <!-- footer note -->
@@ -244,6 +254,50 @@ onMounted(() => {
 
 .submit-btn:hover {
   background: #33ff88;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.submit-btn:disabled:hover {
+  background: var(--green);
+}
+
+.form-error {
+  font-size: 11px;
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+  padding: 10px 12px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── success ── */
+.modal-success {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--green-dim);
+  border: 1px solid var(--green);
+  padding: 20px;
+}
+
+.success-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.success-text {
+  font-size: 12px;
+  color: var(--text-0);
+  line-height: 1.7;
+  margin: 0;
 }
 
 /* ── footer ── */

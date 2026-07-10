@@ -1,0 +1,23 @@
+version: "0.18.0"
+title: "Guardrails"
+type: minor
+date: "2026-07-03"
+codename: themis
+intro: "Discipline features for armed strategies, and one chart to rule them all. Invalidation guards give every strategy a first-class \"Bail Out\" slot — abandon a setup the moment its premise breaks, before a single share is bought. And the chart stack is unified: every indicator on every chart is now computed server-side by the same code the engine trades on."
+sections:
+  - type: added
+    items:
+      - badge: new
+        text: "<strong>Invalidation guards (\"Bail Out\")</strong> — attach state conditions (trend held, volume elevated) that are checked on every candle while a strategy is armed. If one breaks, the setup is abandoned immediately — no more waiting out a confirmation window on a dead premise."
+        author: "@danpastori"
+      - badge: new
+        text: "<strong>Unified market chart</strong> — one configurable chart component across ticker pages and simulations, with SMA 20/50/200, EMA 12/26, Bollinger Bands, session VWAP (intraday), RSI, MACD, ATR, and relative volume."
+        author: "@danpastori"
+  - type: changed
+    items:
+      - badge: improved
+        text: "<strong>All chart indicators computed server-side</strong> — client-side re-derivations removed entirely. The RSI on your chart is now, literally, the engine's RSI."
+        author: "@danpastori"
+      - badge: improved
+        text: "<strong>Paper broker upgrades</strong> — cleaner fills and account handling ahead of live validation."
+        author: "@danpastori"

@@ -3,6 +3,7 @@ const { data: allPosts } = await useAsyncData('blog-listing', () =>
   queryCollection('blog').order('date', 'DESC').all(),
 )
 
+console.log(allPosts.value)
 const categories = [
   { key: 'all', label: 'All' },
   { key: 'strategy', label: 'Strategy' },
@@ -44,10 +45,10 @@ useHead({
   ],
 })
 
-defineOgImage('Ampliterm', {
-  eyebrow: 'BLOG',
-  title: 'Research Blog',
-  description: 'Strategy breakdowns, trading psychology, and deep-dives into how serious traders actually build an edge.',
+useSeoMeta({
+  ogImage: 'https://ampliterm.com/og/blog-og.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
 })
 </script>
 
@@ -109,7 +110,7 @@ defineOgImage('Ampliterm', {
       </div>
     </div>
 
-    <!-- <BlogNewsletter /> -->
+    <EarlyAccessStrip />
     <AppFooter />
   </div>
 </template>
