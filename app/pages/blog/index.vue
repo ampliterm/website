@@ -15,12 +15,12 @@ const categories = [
 const activeFilter = ref('all')
 const showCount = ref(6)
 
-const featuredPost = computed(() =>
-  allPosts.value?.find(p => p.featured) ?? allPosts.value?.[0] ?? null,
-)
+// The newest post is always featured (posts are ordered by date DESC above).
+const featuredPost = computed(() => allPosts.value?.[0] ?? null)
 
 const gridPosts = computed(() => {
-  const posts = allPosts.value?.filter(p => !p.featured) ?? []
+  const featuredPath = featuredPost.value?.path
+  const posts = allPosts.value?.filter(p => p.path !== featuredPath) ?? []
   if (activeFilter.value === 'all') return posts
   return posts.filter(p => p.category === activeFilter.value)
 })

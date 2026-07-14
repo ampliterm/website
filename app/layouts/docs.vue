@@ -10,7 +10,7 @@ watch(() => route.path, () => { sidebarOpen.value = false })
   <AppNav activePage="docs" variant="docs">
     <template #right>
       <DocsSearch />
-      <a class="docs-nav-cta" href="/#pricing">Get Ampliterm — $999</a>
+      <a class="docs-nav-cta" href="/#pricing">Join the waitlist</a>
     </template>
   </AppNav>
 

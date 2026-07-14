@@ -12,7 +12,7 @@ tags:
     variant: cyan
 category: intel
 readTime: 12 min read
-featured: true
+featured: false
 imagePlaceholder: View of all collected and analyzed intel
 headerImage: "/headers/blog-intel-edge-header.png"
 ogImage: "/og/blog-intel-edge-og.png"
